@@ -1,0 +1,27 @@
+form {
+    background: blue;
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    input {
+        font-size: 4em;
+        margin: 10px auto;
+        border-radius: 30px;
+        width: 60%;
+        text-align: center;
+        border: none;
+        caret-color: red;
+        ::placeholder {
+           text-align: center;
+        }
+    }
+    button {
+        font-size: 3em;
+        margin: 5px;
+    }
+    .submit-btn {
+        font-size: 3em;
+    }
+}
