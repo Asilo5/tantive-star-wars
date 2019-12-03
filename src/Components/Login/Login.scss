@@ -48,6 +48,7 @@ form {
     .submit-btn-error {
       @extend .submit-btn;
       width: 45%;
+      cursor: not-allowed;
       color: gray;
       &:hover {
         border: 2px solid transparent;
