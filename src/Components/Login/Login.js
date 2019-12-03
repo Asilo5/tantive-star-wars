@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.scss';
+import { NavLink } from 'react-router-dom';
 
 class Login extends Component {
     constructor() {
@@ -16,7 +17,11 @@ class Login extends Component {
        this.setState({ [e.target.name] : e.target.value })
     }
 
-
+    sendUpState = (e) => {
+       e.preventDefault();
+       const { userInfo } = this.props;
+       userInfo(this.state);
+    }
 
     render() {
         return (
@@ -36,7 +41,7 @@ class Login extends Component {
                     <button name='rank' value='Intermediate' onClick={(e) => this.handleChange(e)}>Intermediate</button>
                     <button name='rank' value='Expert' onClick={(e) => this.handleChange(e)}>Expert</button>
                 </section>
-                <button>Submit</button>
+                <NavLink to='/movies' className='submit-btn' onClick={(e) => this.sendUpState(e)} >Submit</NavLink>
             </form>
         )
     }
