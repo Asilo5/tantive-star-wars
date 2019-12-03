@@ -25,6 +25,7 @@ form {
         margin: 5px;
         padding: 13px;
         border-radius: 10px;
+        border: 2px solid transparent;
         cursor: pointer;
         &:hover,
         &:focus {
@@ -43,6 +44,16 @@ form {
         &:hover {
             border: 2px solid red;
         }
+    }
+    .submit-btn-error {
+      @extend .submit-btn;
+      width: 45%;
+      cursor: not-allowed;
+      color: gray;
+      &:hover {
+        border: 2px solid transparent;
+        color: gray;
+    }
     }
 }
 

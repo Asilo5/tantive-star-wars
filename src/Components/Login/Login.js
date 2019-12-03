@@ -24,6 +24,7 @@ class Login extends Component {
     }
 
     render() {
+        const { name, rank, quote } = this.state;
         return (
             <form>
                 <input placeholder='Must Name Here'
@@ -41,7 +42,11 @@ class Login extends Component {
                     <button name='rank' value='Intermediate' onClick={(e) => this.handleChange(e)}>Intermediate</button>
                     <button name='rank' value='Expert' onClick={(e) => this.handleChange(e)}>Expert</button>
                 </section>
-                <NavLink to='/movies' className='submit-btn' onClick={(e) => this.sendUpState(e)} >Submit</NavLink>
+                { name === '' || quote === '' || rank === '' ? 
+                ( <button className='submit-btn-error' disabled='true'> Inputs Must Fill </button>)
+                : 
+                 (<NavLink to='/movies' className='submit-btn' onClick={(e) => this.sendUpState(e)} >Submit</NavLink> )
+                }
             </form>
         )
     }
