@@ -1,15 +1,16 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-image: 'https://media.giphy.com/media/3ov9k1173PdfJWRsoE/giphy.gif';
-  background-repeat: no-repeat;
-  background-size: cover;
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 
 .App {
-  display: flex;
-  flex-direction: column;
+  background-image: url('https://media.giphy.com/media/3ov9k1173PdfJWRsoE/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  height: 100vh;
+  width: 100%;
   text-align: center;
 }
-
  
