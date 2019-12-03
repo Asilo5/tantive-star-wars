@@ -5,7 +5,15 @@ import './MoviesContainer.scss'
 const MoviesContainer = () => {
     return (
         <section>
-            <MovieCard />
+            <MovieCard 
+            key={}
+            id={}
+            name={}
+            homeworld={}
+            population={}
+            species={}
+            films={}
+            />
         </section>
     )
 }
