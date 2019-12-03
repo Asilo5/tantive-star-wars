@@ -17,9 +17,10 @@ class Login extends Component {
        this.setState({ [e.target.name] : e.target.value })
     }
 
-    sendUpState = () => {
+    sendUpState = (e) => {
+       e.preventDefault();
        const { userInfo } = this.props;
-       userInfo(...this.state);
+       userInfo(this.state);
     }
 
     render() {
@@ -40,7 +41,7 @@ class Login extends Component {
                     <button name='rank' value='Intermediate' onClick={(e) => this.handleChange(e)}>Intermediate</button>
                     <button name='rank' value='Expert' onClick={(e) => this.handleChange(e)}>Expert</button>
                 </section>
-                <NavLink to='/movies' className='submit-btn' onClick={this.sendUpState} >Submit</NavLink>
+                <NavLink to='/movies' className='submit-btn' onClick={(e) => this.sendUpState(e)} >Submit</NavLink>
             </form>
         )
     }
