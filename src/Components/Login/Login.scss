@@ -1,10 +1,13 @@
 form {
-    background: blue;
+    background: rgba(255, 255, 255, 0.322);
+    border: 1px solid red;
     width: 50%;
-    margin: 20px auto;
+    margin: auto;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    margin-top: 15em;
+    padding: 30px;
     input {
         font-size: 4em;
         margin: 10px auto;
@@ -13,6 +16,7 @@ form {
         text-align: center;
         border: none;
         caret-color: red;
+        border-bottom: 2px solid red;
         ::placeholder {
            text-align: center;
         }
@@ -20,8 +24,24 @@ form {
     button {
         font-size: 3em;
         margin: 5px;
+        padding: 13px;
+        border-radius: 10px;
+        &:hover,
+        &:focus {
+           border: 2px solid red;
+           color: red;
+        }
     }
     .submit-btn {
         font-size: 3em;
+        width: 30%;
+        margin: 10px auto;
+        padding: 10px;
+        text-decoration: none;
+        color: red;
+        border-radius: 10px;
+        &:hover {
+            border: 2px solid red;
+        }
     }
 }
