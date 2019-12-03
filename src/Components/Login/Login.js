@@ -11,23 +11,30 @@ class Login extends Component {
         }
     }
 
+    handleChange = (e) => {
+        e.preventDefault();
+       this.setState({ [e.target.name] : e.target.value })
+    }
+
+
+
     render() {
         return (
             <form>
-                <input placeholder='Name'
+                <input placeholder='Must Name Here'
                        type='text' 
                        name='name'
                        value={this.state.name} 
-                       onChange={this.handleChange}/>
-                <input placeholder='Favourite Quote'
+                       onChange={(e) => this.handleChange(e)}/>
+                <input placeholder='Quote Favourite'
                        type='text' 
                        name='quote'
                        value={this.state.quote} 
-                       onChange={this.handleChange}/>
+                       onChange={(e) => this.handleChange(e)}/>
                 <section>
-                    <button>Novice</button>
-                    <button>Intermediate</button>
-                    <button>Expert</button>
+                    <button name='rank' value='Novice' onClick={(e) => this.handleChange(e)} >Novice</button>
+                    <button name='rank' value='Intermediate' onClick={(e) => this.handleChange(e)}>Intermediate</button>
+                    <button name='rank' value='Expert' onClick={(e) => this.handleChange(e)}>Expert</button>
                 </section>
                 <button>Submit</button>
             </form>
