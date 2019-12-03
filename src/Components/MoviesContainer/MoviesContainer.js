@@ -4,7 +4,7 @@ import './MoviesContainer.scss'
 
 const MoviesContainer = () => {
     return (
-        <section>
+        <section className="movieContainer">
             <MovieCard 
             key={}
             id={}
