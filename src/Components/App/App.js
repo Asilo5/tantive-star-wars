@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Login from '../Login/Login';
 import './App.scss';
 
 class App extends Component {
@@ -8,9 +10,11 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <main>Test</main>
-      </div>
+      <main className="App">
+        <Switch>
+          <Route exact path='/' render={() => <Login /> } />
+        </Switch>
+      </main>
     );
   }
 }
