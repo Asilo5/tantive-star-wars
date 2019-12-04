@@ -37,6 +37,7 @@ class Login extends Component {
                        name='quote'
                        value={this.state.quote} 
                        onChange={(e) => this.handleChange(e)}/>
+                <p>What Knowledge have you from Star Wars?</p>
                 <section>
                     <button name='rank' value='Novice' onClick={(e) => this.handleChange(e)} >Novice</button>
                     <button name='rank' value='Intermediate' onClick={(e) => this.handleChange(e)}>Intermediate</button>
