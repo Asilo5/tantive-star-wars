@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
-// import mockData from '../../data/movieData.js';
-import MoviesContainer from '../MoviesContainer/MoviesContainer';
-import { getMovies } from '../../apiCalls';
+import { getMovies } from '../../apiCalls'
+import MoviesContainer from '../MoviesContainer/MoviesContainer'
 
 class App extends Component {
   constructor() {
@@ -25,12 +24,14 @@ class App extends Component {
      })
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     getMovies()
-      .then(films => films.sort((a, b) => parseInt(a.episode_id) - parseInt(b.episode_id)))
-      .then(films => console.log(films))
-      .catch(error => console.error('error'))
-   }
+     .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
+    //  .then(movies => console.log(movies))
+     .then(movies => this.setState({movies: movies}))
+     .catch(err => console.log(err))
+  }
+  
 
   render() {
     return (
