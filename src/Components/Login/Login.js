@@ -13,7 +13,6 @@ class Login extends Component {
     }
 
     handleChange = (e) => {
-        // e.preventDefault();
        this.setState({ [e.target.name] : e.target.value })
     }
 
@@ -46,7 +45,7 @@ class Login extends Component {
                     <button type='button' name='rank' value='Expert' onClick={(e) => this.handleChange(e)}>Expert</button>
                 </section>
                 { name === '' || quote === '' || rank === '' ? 
-                ( <button className='submit-btn-error' disabled='true'> Inputs Must Fill </button>)
+                ( <button className='submit-btn-error' disabled={true}> Inputs Must Fill </button>)
                 : 
                  (<Link to='/movies' className='submit-btn' onClick={(e) => this.sendUpState(e)} >Submit</Link> )
                 }

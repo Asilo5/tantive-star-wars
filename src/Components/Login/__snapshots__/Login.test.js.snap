@@ -49,7 +49,7 @@ exports[`Login should match snapshot with all information passing in correctly 1
   </section>
   <button
     className="submit-btn-error"
-    disabled="true"
+    disabled={true}
   >
      Inputs Must Fill 
   </button>
