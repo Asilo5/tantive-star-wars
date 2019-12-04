@@ -38,9 +38,9 @@ class App extends Component {
   setCharacters = () => {
     const { movies } = this.state;
 
-    let charactersUrl = movies.map((movie) => {
-      return movie.characters;
-    });
+    let charactersUrl = movies.map((movie) => movie.characters);
+
+    // console.log(charactersUrl)
 
     getCharacters(charactersUrl)
     //  .then(data => console.log(data))
