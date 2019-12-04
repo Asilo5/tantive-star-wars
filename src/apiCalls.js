@@ -20,10 +20,28 @@ export const getCharacters = (movies) => {
        character.forEach((charUrl) => {
            fetch(charUrl)
            .then(resp => resp.json())
-           .then(data => console.log(data))
-           
+           .then(data => {
+              let fetchedHomeworld = getHomeworld(data.homeworld)
+                                     .then(home => console.log(home))
+
+              let starCharacter = {
+                name: data.name,
+                homeworld: data.homeworld,
+                population: data.population,
+                species: data.species,
+                films: data.films
+              }
+           })
+           .catch(err => console.log(err))
        });
    })
    return allCharacters;
 };
+
+const getHomeworld = (url) => {
+  return fetch(url)
+  .then(resp => resp.json())
+  .then(homeworld => ({ name: homeworld.name, population: homeworld.population }))
+  .catch(err => console.log(err))
+}
 
