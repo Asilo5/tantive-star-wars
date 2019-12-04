@@ -23,6 +23,7 @@ exports[`Login should match snapshot with all information passing in correctly 1
     <button
       name="rank"
       onClick={[Function]}
+      type="button"
       value="Novice"
     >
       Novice
@@ -30,6 +31,7 @@ exports[`Login should match snapshot with all information passing in correctly 1
     <button
       name="rank"
       onClick={[Function]}
+      type="button"
       value="Intermediate"
     >
       Intermediate
@@ -37,6 +39,7 @@ exports[`Login should match snapshot with all information passing in correctly 1
     <button
       name="rank"
       onClick={[Function]}
+      type="button"
       value="Expert"
     >
       Expert

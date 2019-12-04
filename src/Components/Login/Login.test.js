@@ -15,16 +15,96 @@ describe('Login', () => {
         expect(wrapper).toMatchSnapshot();
     })
 
-    it('should call handleChange when input changes', () => {
-      
+    it.skip('should call handleChange when input changes', () => {
+        expect(wrapper.find('input').at(0).props().value).toEqual('');
+        const mockEvent = {
+            target: {
+                value: 'bob'
+            } 
+        };
+        wrapper.find('input').simulate('change', mockEvent);
+        expect(wrapper.find('input').at(0).props().value).toEqual('bob');
     })
 
-    it('should update state when handleChange is called', () => {
+    it('should update state of name when handleChange is called', () => {
+      const mockEvent = {
+          target: {
+              preventDefault: jest.fn(), 
+              name: 'name',
+              value: 'BB8'
+          }
+      }
 
+      const expected = 'BB8';
+      wrapper.instance().handleChange(mockEvent);
+      expect(wrapper.state('name')).toEqual(expected);
+    })
+
+    it('should update state of quote when handleChange is called', () => {
+        const mockEvent = {
+            target: {
+                preventDefault: jest.fn(), 
+                name: 'quote',
+                value: 'Youre our only hope'
+            }
+        }
+  
+        const expected = 'Youre our only hope';
+        wrapper.instance().handleChange(mockEvent);
+        expect(wrapper.state('quote')).toEqual(expected);
+      })
+
+      it('should update state of rank when handleChange is called', () => {
+        const mockEvent = {
+            target: {
+                preventDefault: jest.fn(), 
+                name: 'rank',
+                value: 'Novice'
+            }
+        }
+  
+        const expected = 'Novice';
+        wrapper.instance().handleChange(mockEvent);
+        expect(wrapper.state('rank')).toEqual(expected);
+      })
+
+    it('should invoke handleChange on click', () => {
+        const mockEvent = {
+            target: {
+                preventDefault: jest.fn(), 
+                name: 'rank',
+                value: 'Novice'
+            }
+        }
+        wrapper.instance().handleChange = jest.fn();
+        wrapper.find('button').at(0).simulate('click', mockEvent);
+        expect(wrapper.instance().handleChange).toHaveBeenCalled();
     })
 
     it('should invoke handleChange on click', () => {
-        
+        const mockEvent = {
+            target: {
+                preventDefault: jest.fn(), 
+                name: 'rank',
+                value: 'Intermediate'
+            }
+        }
+        wrapper.instance().handleChange = jest.fn();
+        wrapper.find('button').at(1).simulate('click', mockEvent);
+        expect(wrapper.instance().handleChange).toHaveBeenCalled();
+    })
+
+    it('should invoke handleChange on click', () => {
+        const mockEvent = {
+            target: {
+                preventDefault: jest.fn(), 
+                name: 'rank',
+                value: 'Expert'
+            }
+        }
+        wrapper.instance().handleChange = jest.fn();
+        wrapper.find('button').at(2).simulate('click', mockEvent);
+        expect(wrapper.instance().handleChange).toHaveBeenCalled();
     })
 
     it('should call userInfo when sendUpState is invoked', () => {
