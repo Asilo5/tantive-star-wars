@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
-import mockData from '../../data/movieData.js';
-// import MoviesContainer from '../MoviesContainer/MoviesContainer'
+import { getMovies } from '../../apiCalls'
+import MoviesContainer from '../MoviesContainer/MoviesContainer'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      movies: [],
       userName: '',
       userQuote: '',
       userRank: ''
@@ -23,12 +24,21 @@ class App extends Component {
      })
   }
 
+  componentDidMount() {
+    getMovies()
+     .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
+    //  .then(movies => console.log(movies))
+     .then(movies => this.setState({movies: movies}))
+     .catch(err => console.log(err))
+  }
+  
+
   render() {
     return (
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
-          {/* <Route path='/movies' render={() => <MoviesContainer userInfo={this.userInfo}/> } /> */}
+          <Route path='/movies' render={() => <MoviesContainer movies={this.state.movies} userInfo={this.userInfo}/> } />
         </Switch>
       </main>
     );
