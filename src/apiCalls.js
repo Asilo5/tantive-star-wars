@@ -20,17 +20,22 @@ export const getCharacters = (movies) => {
        character.forEach((charUrl) => {
            fetch(charUrl)
            .then(resp => resp.json())
-           .then(data => {
-              let fetchedHomeworld = getHomeworld(data.homeworld)
-                                     .then(home => console.log(home))
+           .then(char => {
+              const fetchedHomeworld = getHomeworld(char.homeworld)
+                                     .then(home => home)
+              const fetchedSpecies = getSpecies(char.species)
+                                     .then(charSpecies => charSpecies.species)
+              const fetchedFilms = getFilms(char.films)
+                                   .then(film => film)
 
-              let starCharacter = {
-                name: data.name,
-                homeworld: data.homeworld,
-                population: data.population,
-                species: data.species,
-                films: data.films
-              }
+             Promise.all([fetchedHomeworld, fetchedSpecies, fetchedFilms])
+             .then(data => console.log({
+                name: char.name,
+                homeworld: data[0].name,
+                population: data[0].population,
+                species: data[1],
+                films: data[2]
+             }));
            })
            .catch(err => console.log(err))
        });
@@ -45,3 +50,19 @@ const getHomeworld = (url) => {
   .catch(err => console.log(err))
 }
 
+const getSpecies = (url) => {
+    return fetch(url)
+    .then(resp => resp.json())
+    .then(speciesChar => ({ species: speciesChar.name }))
+    .catch(err => console.log(err))
+}
+
+const getFilms = (allFilms) => {
+   const charactFilms = allFilms.map((film) => {
+       return fetch(film)
+       .then(resp => resp.json())
+       .then(movie => movie.title)
+       .catch(err => console.log(err))
+   })
+   return Promise.all(charactFilms);
+}
