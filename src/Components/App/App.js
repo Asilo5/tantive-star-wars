@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
+// import mockData from '/../data/movieData.js'
 
 class App extends Component {
   constructor() {
