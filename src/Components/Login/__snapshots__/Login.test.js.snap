@@ -3,6 +3,7 @@
 exports[`Login should match snapshot with all information passing in correctly 1`] = `
 <form>
   <input
+    className="user-name"
     name="name"
     onChange={[Function]}
     placeholder="Must Name Here"
@@ -10,6 +11,7 @@ exports[`Login should match snapshot with all information passing in correctly 1
     value=""
   />
   <input
+    className="user-quote"
     name="quote"
     onChange={[Function]}
     placeholder="Quote Favourite"

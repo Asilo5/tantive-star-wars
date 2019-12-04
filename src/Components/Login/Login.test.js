@@ -8,22 +8,39 @@ describe('Login', () => {
     let mockUserInfo = jest.fn();
 
     beforeEach(() => {
-        wrapper=shallow(<Login userInfo={mockUserInfo}/>)
+        wrapper = shallow(<Login userInfo={mockUserInfo}/>)
     })
 
     it('should match snapshot with all information passing in correctly', () => {
         expect(wrapper).toMatchSnapshot();
     })
 
-    it.skip('should call handleChange when input changes', () => {
-        expect(wrapper.find('input').at(0).props().value).toEqual('');
+    it('should call handleChange when input changes', () => {
+        wrapper.instance().handleChange = jest.fn();
         const mockEvent = {
             target: {
-                value: 'bob'
-            } 
+                preventDefault: jest.fn(), 
+                name: 'name',
+                value: 'BB8'
+            }
         };
-        wrapper.find('input').simulate('change', mockEvent);
-        expect(wrapper.find('input').at(0).props().value).toEqual('bob');
+
+        wrapper.find('.user-name').simulate('change', mockEvent);
+        expect(wrapper.instance().handleChange).toHaveBeenCalled();
+    })
+
+    it('should call handleChange when input changes', () => {
+        wrapper.instance().handleChange = jest.fn();
+        const mockEvent = {
+            target: {
+                preventDefault: jest.fn(), 
+                name: 'quote',
+                value: 'Youre our only hope'
+            }
+        };
+
+        wrapper.find('.user-quote').simulate('change', mockEvent);
+        expect(wrapper.instance().handleChange).toHaveBeenCalled();
     })
 
     it('should update state of name when handleChange is called', () => {
@@ -108,10 +125,19 @@ describe('Login', () => {
     })
 
     it('should call userInfo when sendUpState is invoked', () => {
-
+      let mockEvent = {
+          preventDefault: jest.fn()
+      };
+      wrapper.instance().sendUpState(mockEvent);
+      expect(mockUserInfo).toHaveBeenCalled();
     })
 
-    it('should invoke sendUpdate on click', () => {
-
+    it.skip('should invoke sendUpdate on click', () => {
+      wrapper.instance().sendUpState = jest.fn();
+      let mockEvent = {
+        preventDefault: jest.fn()
+      };
+      wrapper.find('.submit-btn').simulate('click', mockEvent);
+      expect(wrapper.instance().sendUpState).toHaveBeenCalled();
     })
 })
