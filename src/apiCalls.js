@@ -14,3 +14,16 @@ export const getMovies = () => {
       });
     });
   };
+
+export const getCharacters = (movies) => {
+   let allCharacters = movies.map((character) => {
+       character.forEach((charUrl) => {
+           fetch(charUrl)
+           .then(resp => resp.json())
+           .then(data => console.log(data))
+           
+       });
+   })
+   return allCharacters;
+};
+

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
-import { getMovies } from '../../apiCalls'
+import { getMovies, getCharacters } from '../../apiCalls'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
+      characters: [],
       userName: '',
       userQuote: '',
       userRank: ''
@@ -30,10 +31,24 @@ class App extends Component {
     //  .then(movies => console.log(movies))
      .then(movies => this.setState({movies: movies}))
      .catch(err => console.log(err))
+   
+    //  this.setCharacters();
+  }
+
+  setCharacters = () => {
+    const { movies } = this.state;
+
+    let charactersUrl = movies.map((movie) => {
+      return movie.characters;
+    });
+
+    getCharacters(charactersUrl)
+    //  .then(data => console.log(data))
   }
   
 
   render() {
+    this.setCharacters();
     return (
       <main className="App">
         <Switch>
