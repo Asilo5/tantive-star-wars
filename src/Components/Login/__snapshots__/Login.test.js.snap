@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match snapshot with all information passing in correctly 1`] = `
+<form>
+  <input
+    name="name"
+    onChange={[Function]}
+    placeholder="Must Name Here"
+    type="text"
+    value=""
+  />
+  <input
+    name="quote"
+    onChange={[Function]}
+    placeholder="Quote Favourite"
+    type="text"
+    value=""
+  />
+  <p>
+    What Knowledge have you from Star Wars?
+  </p>
+  <section>
+    <button
+      name="rank"
+      onClick={[Function]}
+      value="Novice"
+    >
+      Novice
+    </button>
+    <button
+      name="rank"
+      onClick={[Function]}
+      value="Intermediate"
+    >
+      Intermediate
+    </button>
+    <button
+      name="rank"
+      onClick={[Function]}
+      value="Expert"
+    >
+      Expert
+    </button>
+  </section>
+  <button
+    className="submit-btn-error"
+    disabled="true"
+  >
+     Inputs Must Fill 
+  </button>
+</form>
+`;
