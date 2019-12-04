@@ -1,15 +1,13 @@
 import React from 'react';
 import './MovieCard.scss';
 
-const MovieCard = ({name, homeworld, population, species, films}) => {
+const MovieCard = ({title, episode_id, release_date, id }) => {
     return (
     <article className="movieCard">
       <ul>    
-        <li>{name}</li>
-        <li>{homeworld}</li>
-        <li>{population}</li>
-        <li>{species}</li>
-        <li>{films}</li>
+        <li>{title}</li>
+        <li>{episode_id}</li>
+        <li>{release_date}</li>
       </ul>  
       <button type="submit">Favorite</button>
     </article>
