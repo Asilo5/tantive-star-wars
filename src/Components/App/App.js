@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
-// import mockData from '/../data/movieData.js'
+import mockData from '../../data/movieData.js'
 
 class App extends Component {
   constructor() {
@@ -27,6 +27,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
+          <Route path='/movies' render={() => <Login userInfo={this.userInfo}/> } />
         </Switch>
       </main>
     );
