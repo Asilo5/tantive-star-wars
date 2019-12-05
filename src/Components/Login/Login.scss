@@ -1,6 +1,6 @@
 %button_styles {
     border-radius: 10px;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 form {
@@ -43,7 +43,7 @@ form {
     }
     .submit-btn-error {
       @extend .submit-btn;
-      width: 45%;
+      width: 75%;
       cursor: not-allowed;
       color: gray;
       &:hover {
@@ -54,8 +54,9 @@ form {
 }
 
 section {
-    display: flex;
-    button {
+    display: block;
+    margin: auto;
+    .knowledge_button {
         @extend %button_styles;
         margin: 5px;
         padding: 13px;
@@ -80,6 +81,15 @@ body {
 
 h1 {
     color: white;
-    font-size: 8em;
+    font-size: 7em;
+    font-family: 'Bebas Neue', cursive;
+    margin: auto;
+}
+
+.tantive_heading {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5em;
+    margin: auto;
 }
 
