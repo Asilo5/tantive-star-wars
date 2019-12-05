@@ -40,7 +40,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
-          {isLoading ? <img src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
+          {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
           (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userInfo={this.userInfo}/> } />)}
         </Switch>
       </main>
