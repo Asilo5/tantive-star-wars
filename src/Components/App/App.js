@@ -28,11 +28,8 @@ class App extends Component {
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-    //  .then(movies => console.log(movies))
      .then(movies => this.setState({movies: movies}))
      .catch(err => console.log(err))
-   
-    //  this.setCharacters();
   }
 
   setCharacters = () => {
@@ -41,14 +38,12 @@ class App extends Component {
     let charactersUrl = movies.map((movie) => movie.characters);
 
     getCharacters(charactersUrl)
-    //  .then(characterData => this.setState({ characters : characterData }))
     .then(characterData => console.log(characterData))
   }
   
 
   render() {
     this.setCharacters();
-    // console.log(this.state.characters)
     return (
       <main className="App">
         <Switch>
