@@ -1,14 +1,15 @@
 import React from 'react';
 import './MovieCard.scss';
 
-const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl }) => {
+const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl, setCharacters }) => {
+    console.log(characters);
     return (
     <article className="movieCard">
       <ul>    
         <li>{title}</li>
         <li>Episode: {episode_id}</li>
         <li>Released in {release_date}</li>
-        <button className="movie_card_btn" type="submit">Favorite</button>
+        <button className="movie_card_btn" type="submit" onClick={setCharacters(characters)}>Favorite</button>
       </ul>  
     </article>
     )
