@@ -9,7 +9,10 @@ const MovieCard = ({title, episode_id, release_date, id, characters, openingCraw
         <li>{title}</li>
         <li>Episode: {episode_id}</li>
         <li>Released in {release_date}</li>
-        <button className="movie_card_btn" type="submit" onClick={setCharacters(characters)}>Favorite</button>
+        <button 
+          className="movie_card_btn" 
+          type="submit" 
+          onClick={setCharacters(characters)}>View Characters</button>
       </ul>  
     </article>
     )
