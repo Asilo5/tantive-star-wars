@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should match snapshot with all information passing in correctly 1`] = `
+<nav>
+  <div>
+    <img
+      alt="Princess Leia"
+      src="https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg"
+    />
+    <h2>
+      Consuelo
+    </h2>
+    <h3>
+      Luke, Ich bin dein Vater
+    </h3>
+    <h3>
+      Novice
+    </h3>
+  </div>
+  <div
+    className="nav-links"
+  >
+    <NavLink
+      activeClassName="active-nav"
+      className="nav"
+      to="/movies"
+    >
+      Movies
+    </NavLink>
+    <NavLink
+      activeClassName="active-nav"
+      className="nav"
+      to="/favourites"
+    >
+      Favourites
+    </NavLink>
+    <NavLink
+      activeClassName="active-nav"
+      className="nav"
+      exact={true}
+      to="/"
+    >
+      Log Out
+    </NavLink>
+  </div>
+</nav>
+`;
