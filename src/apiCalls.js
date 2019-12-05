@@ -11,7 +11,7 @@ export const getMovies = () => {
           characters: firstTenCharacters,
           opening_crawl: movie.opening_crawl
         }
-      });
+      }); 
     });
   };
 
