@@ -34,7 +34,7 @@ form {
     }
     .submit-btn {
         @extend %button_styles;
-        width: 30%;
+        width: 75%;
         margin: 10px auto;
         padding: 10px;
         text-decoration: none;
@@ -47,7 +47,8 @@ form {
       @extend .submit-btn;
       width: 75%;
       cursor: not-allowed;
-      color: gray;
+      background-color: gray;
+      color: black;
       &:hover {
         border: 2px solid transparent;
         color: gray;
@@ -73,7 +74,7 @@ section {
 }
 
 body {
-    background-image: url('https://media.giphy.com/media/3ov9k1173PdfJWRsoE/giphy.gif');
+    background-image: url('https://media.giphy.com/media/l3q2RgN7WUjeUUXm0/giphy.gif');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
