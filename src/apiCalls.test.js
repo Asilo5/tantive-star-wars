@@ -13,5 +13,11 @@ describe('apiCalls', () => {
     });
   })
 
-  
+  it('should call fetch with the correct url', () => {
+    getMovies()
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/films/')
+  })
+
+
+
 })
