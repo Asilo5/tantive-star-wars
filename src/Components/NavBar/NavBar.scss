@@ -1,13 +1,33 @@
+$primary-text : #00D800;
+
 nav {
-    background: blue;
+    background: transparent;
+    border-right: 1px solid $primary-text;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 10px;
+
+    h2 {
+      color: $primary-text;
+    }
+
+    h3 {
+        color: $primary-text;
+    }
 }
 
 .nav-links {
     display: flex;
     flex-direction: column;
     padding: 30px;
+
+    .nav {
+        color: $primary-text;
+    }
+
+    .active-nav {
+
+    }
 }
