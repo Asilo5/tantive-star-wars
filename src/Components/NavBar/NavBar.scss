@@ -1,20 +1,28 @@
-$primary-text : #00D800;
+$primary-color : #00D800;
 
 nav {
     background: transparent;
-    border-right: 1px solid $primary-text;
+    border-right: 1px solid $primary-color;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
 
+    img {
+        height: 11em;
+        padding: 5px;
+        border-radius: 25px;
+        margin: 5px;
+        border: 1px solid $primary-color;
+    }
+
     h2 {
-      color: $primary-text;
+      color: $primary-color;
     }
 
     h3 {
-        color: $primary-text;
+        color: $primary-color;
     }
 }
 
@@ -24,7 +32,7 @@ nav {
     padding: 30px;
 
     .nav {
-        color: $primary-text;
+        color: $primary-color;
     }
 
     .active-nav {
