@@ -41,13 +41,14 @@ class App extends Component {
     let charactersUrl = movies.map((movie) => movie.characters);
 
     getCharacters(charactersUrl)
-     .then(characterData => this.setState({ characters : characterData }))
+    //  .then(characterData => this.setState({ characters : characterData }))
+    .then(characterData => console.log(characterData))
   }
   
 
   render() {
     this.setCharacters();
-    console.log(this.state.characters)
+    // console.log(this.state.characters)
     return (
       <main className="App">
         <Switch>
