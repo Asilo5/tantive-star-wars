@@ -33,11 +33,7 @@ class App extends Component {
      .catch(err => console.log(err))
   }
 
-  setCharacters = () => {
-    const { movies } = this.state;
-
-    let charactersUrl = movies.map((movie) => movie.characters);
-
+  setCharacters = (charactersUrl) => {
     getCharacters(charactersUrl)
     .then(characterData => console.log(characterData))
   }
@@ -45,14 +41,12 @@ class App extends Component {
 
   render() {
     const { isLoading, userName, userQuote, userRank } = this.state;
-    this.setCharacters();
-
     return (
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
-  (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} /> } />)}
+          (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/> } />)}
         </Switch>
       </main>
     );

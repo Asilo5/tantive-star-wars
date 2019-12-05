@@ -11,13 +11,12 @@ export const getMovies = () => {
           characters: firstTenCharacters,
           opening_crawl: movie.opening_crawl
         }
-      });
+      }); 
     });
   };
 
-export const getCharacters = (movies) => {
-   const allCharacters = movies.map((movie) => {
-       let characterInfo = movie.map((charUrl) => {
+export const getCharacters = (allCharacters) => {
+       const characterInfo = allCharacters.map((charUrl) => {
            return fetch(charUrl)
            .then(resp => {
             if (!resp.ok) {
@@ -45,9 +44,6 @@ export const getCharacters = (movies) => {
        });
        return Promise.all(characterInfo)
               .then(data => data)
-   })
-   return Promise.all(allCharacters)
-        .then(data => data);
 };
 
 const getHomeworld = (url) => {
