@@ -1,73 +1,102 @@
+$accent_color: red;
+
+%button_styles {
+    border-radius: 10px;
+    font-size: 2em;
+}
+
 form {
     background: rgba(255, 255, 255, 0.322);
-    border: 1px solid red;
+    border: 1px solid $accent_color;
     width: 50%;
     margin: auto;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    margin-top: 15em;
+    margin-top: 2em;
     padding: 30px;
     input {
-        font-size: 4em;
+        font-size: 2.2em;
         margin: 10px auto;
-        width: 60%;
+        width: 92%;
         text-align: center;
         border: none;
-        caret-color: red;
-        border-bottom: 2px solid red;
+        caret-color: $accent_color;
+        border-bottom: 2px solid $accent_color;
         ::placeholder {
            text-align: center;
         }
     }
     p {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
-      color: red;
-    }
-    button {
-        font-size: 3em;
-        margin: 5px;
-        padding: 13px;
-        border-radius: 10px;
-        border: 2px solid transparent;
-        cursor: pointer;
-        &:hover,
-        &:focus {
-           border: 2px solid red;
-           color: red;
-        }
+      color: $accent_color;
     }
     .submit-btn {
-        font-size: 3em;
-        width: 30%;
+        @extend %button_styles;
+        width: 75%;
         margin: 10px auto;
         padding: 10px;
         text-decoration: none;
-        color: red;
-        border-radius: 10px;
+        color: $accent_color;
         &:hover {
-            border: 2px solid red;
+            border: 2px solid $accent_color;
         }
     }
     .submit-btn-error {
       @extend .submit-btn;
-      width: 45%;
+      width: 75%;
       cursor: not-allowed;
-      color: gray;
+      background-color: gray;
+      color: black;
       &:hover {
         border: 2px solid transparent;
         color: gray;
+      }
     }
+}
+
+section {
+    display: block;
+    margin: auto;
+    .knowledge_button {
+        @extend %button_styles;
+        margin: 5px;
+        padding: 13px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+           border: 2px solid $accent_color;
+           color: $accent_color;
+        }
     }
 }
 
 body {
-    background-image: url('https://media.giphy.com/media/3ov9k1173PdfJWRsoE/giphy.gif');
+    background-image: url('https://media.giphy.com/media/l3q2RgN7WUjeUUXm0/giphy.gif');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
     text-align: center;
-  }
+}
+
+.yoda_head {
+    height: 150px;
+}
+
+h1 {
+    color: white;
+    font-size: 7em;
+    font-family: 'Bebas Neue', cursive;
+    margin: auto;
+}
+
+.tantive_heading {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5em;
+    margin: auto;
+}
 
