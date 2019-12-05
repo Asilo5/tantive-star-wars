@@ -39,11 +39,13 @@ export const getCharacters = (allCharacters) => {
 
              return Promise.all([fetchedHomeworld, fetchedSpecies, fetchedFilms])
              .then(data => ({
+                id: Date.now(),
                 name: char.name,
                 homeworld: data[0].name,
                 population: data[0].population,
                 species: data[1],
-                films: data[2]
+                films: data[2],
+                isFavorite: false
              }));
            })
        });
