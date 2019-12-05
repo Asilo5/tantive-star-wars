@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharactersContainer should match snapshot with all data passing in correctly 1`] = `
+<section>
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Tatooine"
+    name="Luke Skywalker"
+    population="200000"
+    species="Human"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Tatooine"
+    name="C-3PO"
+    population="200000"
+    species="Droid"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Naboo"
+    name="R2-D2"
+    population="4500000000"
+    species="Droid"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Tatooine"
+    name="Darth Vader"
+    population="200000"
+    species="Human"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Alderaan"
+    name="Leia Organa"
+    population="2000000000"
+    species="Human"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Stewjon"
+    name="Obi-Wan Kenobi"
+    population="unknown"
+    species="Human"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Kashyyyk"
+    name="Chewbacca"
+    population="45000000"
+    species="Wookiee"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Corellia"
+    name="Han Solo"
+    population="3000000000"
+    species="Human"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Nal Hutta"
+    name="Jabba Desilijic Tiure"
+    population="7000000000"
+    species="Hutt"
+  />
+  <[object Object]
+    films={
+      Array [
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    homeworld="Corellia"
+    name="Wedge Antilles"
+    population="3000000000"
+    species="Human"
+  />
+</section>
+`;
