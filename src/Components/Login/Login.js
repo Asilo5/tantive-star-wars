@@ -24,6 +24,8 @@ class Login extends Component {
     render() {
         const { name, rank, quote } = this.state;
         return (
+          <div>
+            <h1>Tantive Star Wars Trivia</h1>
             <form>
                 <input className='user-name'
                        placeholder='Must Name Here'
@@ -49,6 +51,7 @@ class Login extends Component {
                  (<Link to='/movies'><button className='submit-btn' onClick={this.sendUpState}>Submit</button></Link> )
                 }
             </form>
+          </div>
         )
     }
 }
