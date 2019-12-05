@@ -13,7 +13,8 @@ class App extends Component {
       characters: [],
       userName: '',
       userQuote: '',
-      userRank: ''
+      userRank: '',
+      isLoading: true
     }
   }
 
@@ -28,7 +29,7 @@ class App extends Component {
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-     .then(movies => this.setState({movies: movies}))
+     .then(movies => this.setState({movies: movies, isLoading: false}))
      .catch(err => console.log(err))
   }
 
@@ -44,11 +45,13 @@ class App extends Component {
 
   render() {
     this.setCharacters();
+    const { isLoading } = this.state;
     return (
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
-          <Route path='/movies' render={() => <MoviesContainer movies={this.state.movies} userInfo={this.userInfo}/> } />
+          {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
+          (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userInfo={this.userInfo}/> } />)}
         </Switch>
       </main>
     );

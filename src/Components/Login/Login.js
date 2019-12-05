@@ -16,8 +16,7 @@ class Login extends Component {
        this.setState({ [e.target.name] : e.target.value })
     }
 
-    sendUpState = (e) => {
-       e.preventDefault();
+    sendUpState = () => {
        const { userInfo } = this.props;
        userInfo(this.state);
     }
@@ -47,7 +46,7 @@ class Login extends Component {
                 { name === '' || quote === '' || rank === '' ? 
                 ( <button className='submit-btn-error' disabled={true}> Inputs Must Fill </button>)
                 : 
-                 (<Link to='/movies' className='submit-btn' onClick={(e) => this.sendUpState(e)} >Submit</Link> )
+                 (<Link to='/movies'><button className='submit-btn' onClick={this.sendUpState}>Submit</button></Link> )
                 }
             </form>
         )
