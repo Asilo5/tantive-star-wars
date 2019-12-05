@@ -34,7 +34,6 @@ class App extends Component {
   }
 
   setCharacters = (charactersUrl) => {
-    console.log('App 37', charactersUrl)
     getCharacters(charactersUrl)
     .then(characterData => console.log(characterData))
   }
@@ -42,8 +41,6 @@ class App extends Component {
 
   render() {
     const { isLoading, userName, userQuote, userRank } = this.state;
-    this.setCharacters();
-
     return (
       <main className="App">
         <Switch>
