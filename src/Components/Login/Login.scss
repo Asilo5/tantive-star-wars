@@ -1,3 +1,8 @@
+%button_styles {
+    border-radius: 10px;
+    font-size: 3em;
+}
+
 form {
     background: rgba(255, 255, 255, 0.322);
     border: 1px solid red;
@@ -25,27 +30,13 @@ form {
       font-weight: bold;
       color: red;
     }
-    button {
-        font-size: 3em;
-        margin: 5px;
-        padding: 13px;
-        border-radius: 10px;
-        border: 2px solid transparent;
-        cursor: pointer;
-        &:hover,
-        &:focus {
-           border: 2px solid red;
-           color: red;
-        }
-    }
     .submit-btn {
-        font-size: 3em;
+        @extend %button_styles;
         width: 30%;
         margin: 10px auto;
         padding: 10px;
         text-decoration: none;
         color: red;
-        border-radius: 10px;
         &:hover {
             border: 2px solid red;
         }
@@ -58,12 +49,24 @@ form {
       &:hover {
         border: 2px solid transparent;
         color: gray;
-    }
+      }
     }
 }
 
 section {
     display: flex;
+    button {
+        @extend %button_styles;
+        margin: 5px;
+        padding: 13px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+           border: 2px solid red;
+           color: red;
+        }
+    }
 }
 
 body {
