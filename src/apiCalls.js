@@ -16,7 +16,6 @@ export const getMovies = () => {
   };
 
 export const getCharacters = (allCharacters) => {
-  //  const allCharacters = movies.map((movie) => {
        const characterInfo = allCharacters.map((charUrl) => {
            return fetch(charUrl)
            .then(resp => {
@@ -45,9 +44,6 @@ export const getCharacters = (allCharacters) => {
        });
        return Promise.all(characterInfo)
               .then(data => data)
-  //  })
-  //  return Promise.all(allCharacters)
-  //       .then(data => data);
 };
 
 const getHomeworld = (url) => {
