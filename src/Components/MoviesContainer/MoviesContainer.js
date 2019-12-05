@@ -15,7 +15,7 @@ const MoviesContainer = ({movies, userName, userQuote, userRank}) => {
         }); 
     return (
         <section className='movie-section'>
-            <NavBar serName={userName} userQuote={userQuote} userRank={userRank}/> 
+            <NavBar userName={userName} userQuote={userQuote} userRank={userRank}/> 
             <section className='movie-container'>
               {allMovies}
             </section>
