@@ -1,0 +1,51 @@
+$primary-color : #00D800;
+
+nav {
+    background: transparent;
+    border-right: 1px solid $primary-color;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+
+    img {
+        height: 11em;
+        padding: 5px;
+        border-radius: 25px;
+        margin: 5px;
+        border: 1px solid $primary-color;
+    }
+
+    h2 {
+      color: $primary-color;
+    }
+
+    h3 {
+        color: $primary-color;
+    }
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    .nav {
+        color: $primary-color;
+        margin: 30px;
+        font-size: 25px;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 5px;
+        &:hover {
+           border-top: 1px solid $primary-color;
+           border-bottom: 1px solid $primary-color;
+        }
+    }
+
+    .active-nav {
+        border-top: 1px solid $primary-color;
+        border-bottom: 1px solid $primary-color;
+    }
+}

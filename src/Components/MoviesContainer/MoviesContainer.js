@@ -1,8 +1,9 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
-import './MoviesContainer.scss'
+import './MoviesContainer.scss';
+import NavBar from '../NavBar/NavBar';
 
-const MoviesContainer = ({movies}) => {
+const MoviesContainer = ({movies, userName, userQuote, userRank}) => {
     let allMovies = movies.map(movie => {
     return <MovieCard 
             title={movie.title}
@@ -13,8 +14,11 @@ const MoviesContainer = ({movies}) => {
             />
         }); 
     return (
-        <section className="movieContainer">
-            {allMovies}
+        <section className='movie-section'>
+            <NavBar userName={userName} userQuote={userQuote} userRank={userRank}/> 
+            <section className='movie-container'>
+              {allMovies}
+            </section>
         </section>
     )
 }
