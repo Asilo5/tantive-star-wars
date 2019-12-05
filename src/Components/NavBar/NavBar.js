@@ -3,7 +3,6 @@
  import { NavLink } from 'react-router-dom';
 
  const NavBar = ({userName, userQuote, userRank}) => {
-     console.log(userName)
      return (
          <nav>
             <div>
