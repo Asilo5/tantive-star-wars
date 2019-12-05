@@ -1,4 +1,8 @@
-.movieContainer {
+.movie-section {
+    display: flex;
+}
+
+.movie-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
