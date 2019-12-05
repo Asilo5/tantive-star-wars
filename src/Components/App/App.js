@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   setCharacters = (charactersUrl) => {
+    console.log('App 37', charactersUrl)
     getCharacters(charactersUrl)
     .then(characterData => console.log(characterData))
   }
