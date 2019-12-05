@@ -22,7 +22,7 @@ describe('apiCalls', () => {
     expect(getMovies()).resolves.toEqual(mockData)
   });
 
-  it.skip('should return character info when getCharacters is called', () => {
+  it('should return character info when getCharacters is called', () => {
     const mockCharacters = [{name: 'Princess Leia'}, {name: 'Luke Skywalker'}, {name: 'Yoda'}]
     
     window.fetch = jest.fn().mockImplementation(() => {
