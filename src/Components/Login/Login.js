@@ -24,6 +24,10 @@ class Login extends Component {
     render() {
         const { name, rank, quote } = this.state;
         return (
+          <div>
+            <h1>Star Wars Trivia</h1>
+            <img className="yoda_head" src="http://pluspng.com/img-png/yoda-head-png-download-800.gif" alt="yoda's face"></img>
+            <h2 className="tantive_heading">Tantive Edition</h2>
             <form>
                 <input className='user-name'
                        placeholder='Must Name Here'
@@ -39,9 +43,29 @@ class Login extends Component {
                        onChange={(e) => this.handleChange(e)}/>
                 <p>What Knowledge have you from Star Wars?</p>
                 <section>
-                    <button type='button' name='rank' value='Novice' onClick={(e) => this.handleChange(e)} >Novice</button>
-                    <button type='button' name='rank' value='Intermediate' onClick={(e) => this.handleChange(e)}>Intermediate</button>
-                    <button type='button' name='rank' value='Expert' onClick={(e) => this.handleChange(e)}>Expert</button>
+                    <button 
+                      className="knowledge_button" 
+                      type='button' 
+                      name='rank' 
+                      value='Novice' 
+                      onClick={(e) => this.handleChange(e)} 
+                      >Novice
+                    </button>
+                    <button 
+                      className="knowledge_button" 
+                      type='button' 
+                      name='rank' 
+                      value='Intermediate' 
+                      onClick={(e) => this.handleChange(e)}>Intermediate
+                    </button>
+                    <button 
+                      className="knowledge_button"  
+                      type='button' 
+                      name='rank' 
+                      value='Expert' 
+                      onClick={(e) => this.handleChange(e)}
+                      >Expert
+                    </button>
                 </section>
                 { name === '' || quote === '' || rank === '' ? 
                 ( <button className='submit-btn-error' disabled={true}> Inputs Must Fill </button>)
@@ -49,6 +73,7 @@ class Login extends Component {
                  (<Link to='/movies'><button className='submit-btn' onClick={this.sendUpState}>Submit</button></Link> )
                 }
             </form>
+          </div>
         )
     }
 }
