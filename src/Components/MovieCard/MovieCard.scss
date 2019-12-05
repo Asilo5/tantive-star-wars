@@ -1,6 +1,13 @@
 .movieCard {
-    color: aqua;
+    background-color: aqua;
     display: flex;
-    height: 200px;
-    width: 30%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 193px;
+    margin: 1%;
+    width: 28%;
+}
+
+ul {
+    list-style: none;
 }
