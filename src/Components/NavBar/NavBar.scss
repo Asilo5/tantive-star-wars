@@ -1,4 +1,13 @@
 nav {
     background: blue;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
 }
