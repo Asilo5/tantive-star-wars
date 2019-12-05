@@ -1,3 +1,5 @@
+$accent_color: red;
+
 %button_styles {
     border-radius: 10px;
     font-size: 2em;
@@ -5,7 +7,7 @@
 
 form {
     background: rgba(255, 255, 255, 0.322);
-    border: 1px solid red;
+    border: 1px solid $accent_color;
     width: 50%;
     margin: auto;
     border-radius: 20px;
@@ -19,16 +21,16 @@ form {
         width: 92%;
         text-align: center;
         border: none;
-        caret-color: red;
-        border-bottom: 2px solid red;
+        caret-color: $accent_color;
+        border-bottom: 2px solid $accent_color;
         ::placeholder {
            text-align: center;
         }
     }
     p {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
-      color: red;
+      color: $accent_color;
     }
     .submit-btn {
         @extend %button_styles;
@@ -36,9 +38,9 @@ form {
         margin: 10px auto;
         padding: 10px;
         text-decoration: none;
-        color: red;
+        color: $accent_color;
         &:hover {
-            border: 2px solid red;
+            border: 2px solid $accent_color;
         }
     }
     .submit-btn-error {
@@ -64,8 +66,8 @@ section {
         cursor: pointer;
         &:hover,
         &:focus {
-           border: 2px solid red;
-           color: red;
+           border: 2px solid $accent_color;
+           color: $accent_color;
         }
     }
 }
@@ -77,6 +79,10 @@ body {
     height: 100vh;
     width: 100%;
     text-align: center;
+}
+
+.yoda_head {
+    height: 150px;
 }
 
 h1 {
