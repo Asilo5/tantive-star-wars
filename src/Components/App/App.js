@@ -36,7 +36,7 @@ class App extends Component {
 
   setCharacters = (charactersUrl) => {
     getCharacters(charactersUrl)
-    .then(characterData => console.log(characterData))
+    .then(characterData => this.setState({characters: characterData}))
   }
   
 
