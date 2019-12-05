@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
-import { getMovies } from '../../apiCalls'
+import { getMovies, getCharacters } from '../../apiCalls'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
+      characters: [],
       userName: '',
       userQuote: '',
       userRank: '',
@@ -28,14 +29,24 @@ class App extends Component {
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-    //  .then(movies => console.log(movies))
      .then(movies => this.setState({movies: movies, isLoading: false}))
      .catch(err => console.log(err))
+  }
+
+  setCharacters = () => {
+    const { movies } = this.state;
+
+    let charactersUrl = movies.map((movie) => movie.characters);
+
+    getCharacters(charactersUrl)
+    .then(characterData => console.log(characterData))
   }
   
 
   render() {
     const { isLoading, userName, userQuote, userRank } = this.state;
+    this.setCharacters();
+
     return (
       <main className="App">
         <Switch>
