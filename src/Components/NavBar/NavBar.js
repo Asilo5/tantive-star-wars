@@ -14,7 +14,7 @@
             <div className='nav-links'>
                 <NavLink to='/movies' className='nav' activeClassName='active-nav' >Movies</NavLink>
                 <NavLink to='/favourites' className='nav' activeClassName='active-nav' >Favourites</NavLink>
-                <NavLink to='/' className='nav' activeClassName='active-nav' >Log Out</NavLink>
+                <NavLink exact to='/' className='nav' activeClassName='active-nav' >Log Out</NavLink>
             </div>
          </nav>
      )

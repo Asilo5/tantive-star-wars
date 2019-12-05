@@ -33,9 +33,19 @@ nav {
 
     .nav {
         color: $primary-color;
+        margin: 30px;
+        font-size: 25px;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 5px;
+        &:hover {
+           border-top: 1px solid $primary-color;
+           border-bottom: 1px solid $primary-color;
+        }
     }
 
     .active-nav {
-
+        border-top: 1px solid $primary-color;
+        border-bottom: 1px solid $primary-color;
     }
 }
