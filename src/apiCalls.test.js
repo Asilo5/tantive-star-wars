@@ -18,6 +18,9 @@ describe('apiCalls', () => {
     expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/films/')
   })
 
+  it('should return an array of movies when getMovies is called', () => {
+    expect(getMovies()).resolves.toEqual(mockData)
+  })
 
 
 })
