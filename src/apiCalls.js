@@ -16,8 +16,8 @@ export const getMovies = () => {
   };
 
 export const getCharacters = (movies) => {
-   const allCharacters = movies.map((character) => {
-       return character.map((charUrl) => {
+   const allCharacters = movies.map((movie) => {
+       let characterInfo = movie.map((charUrl) => {
            return fetch(charUrl)
            .then(resp => resp.json())
            .then(char => {
@@ -28,7 +28,7 @@ export const getCharacters = (movies) => {
               const fetchedFilms = getFilms(char.films)
                                    .then(film => film)
 
-             Promise.all([fetchedHomeworld, fetchedSpecies, fetchedFilms])
+             return Promise.all([fetchedHomeworld, fetchedSpecies, fetchedFilms])
              .then(data => ({
                 name: char.name,
                 homeworld: data[0].name,
@@ -39,8 +39,9 @@ export const getCharacters = (movies) => {
            })
            .catch(err => console.log(err))
        });
+       return Promise.all(characterInfo)
+              .then(data => data)
    })
-   console.log(allCharacters)
    return Promise.all(allCharacters)
         .then(data => data);
 };
