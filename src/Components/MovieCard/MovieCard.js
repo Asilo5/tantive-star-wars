@@ -8,7 +8,7 @@ const MovieCard = ({title, episode_id, release_date, id }) => {
         <li>{title}</li>
         <li>Episode: {episode_id}</li>
         <li>Released in {release_date}</li>
-        <button className="movie_card_btn" type="submit">Favorite</button>
+        <button className="movie_card_btn" type="submit">View Characters</button>
       </ul>  
     </article>
     )
