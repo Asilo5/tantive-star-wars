@@ -35,13 +35,13 @@ class App extends Component {
   
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, userName, userQuote, userRank } = this.state;
     return (
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
-          (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userInfo={this.userInfo}/> } />)}
+  (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} /> } />)}
         </Switch>
       </main>
     );
