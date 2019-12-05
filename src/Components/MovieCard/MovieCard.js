@@ -6,10 +6,10 @@ const MovieCard = ({title, episode_id, release_date, id }) => {
     <article className="movieCard">
       <ul>    
         <li>{title}</li>
-        <li>{episode_id}</li>
-        <li>{release_date}</li>
+        <li>Episode: {episode_id}</li>
+        <li>Released in {release_date}</li>
       </ul>  
-      <button type="submit">Favorite</button>
+      <button className="movie_card_btn" type="submit">Favorite</button>
     </article>
     )
 }
