@@ -1,7 +1,7 @@
 import React from 'react';
 import './MovieCard.scss';
 
-const MovieCard = ({title, episode_id, release_date, id }) => {
+const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl }) => {
     return (
     <article className="movieCard">
       <ul>    
