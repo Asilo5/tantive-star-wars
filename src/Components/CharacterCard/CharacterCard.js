@@ -1,14 +1,18 @@
 import React from 'react';
 import './CharacterCard.scss';
 
-const CharacterCard = ({ name, homeWorld, population, species, films }) => {
+const CharacterCard = ({ name, homeworld, population, species, films }) => {
   return (
       <section className='card'>
         <h2>{name}</h2>
-        <p>Homeworld: {homeWorld}</p>
-        <p>Population: {population}</p>
-        <p>Species: {species}</p>
-        <p>Seen in:{films}</p>
+        <h3>Homeworld:</h3>
+        <p>{homeworld}</p>
+        <h3>Population:</h3>
+        <p>{population}</p>
+        <h3>Species: </h3>
+        <p>{species}</p>
+        <h3>Seen in:</h3>
+        <p>{films}</p>
       </section>
   ) 
 }
