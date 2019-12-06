@@ -10,10 +10,10 @@ exports[`App should match a snapshot of all the information being passed in corr
       path="/"
       render={[Function]}
     />
-    <img
-      alt="BB8 giff"
-      className="bb8-loading"
-      src="https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif"
+    <Route
+      exact={true}
+      path="/movies"
+      render={[Function]}
     />
     <Route
       path="/characters"
