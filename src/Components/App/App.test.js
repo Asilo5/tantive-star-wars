@@ -37,24 +37,10 @@ describe('App', () => {
       expect(wrapper.state('userRank')).toEqual('Expert');
   });
 
-  it('should retrieve Movies after mounting', () => {
-      const movieData = [
-        {
-          title: 'A New Hope',
-          episode: 4
-          releaseYear: '1974',
-          characters: 
-          scrollText: 'blah blah',
-        }, {
-          title: 'Whatever',
-          episode: 7
-          releaseYear: '1985',
-          characters:
-          scrollText: 'blah blah',
-        }
-      ];
+  it('should retrieve movies after mounting', () => {
+      const movieData = [{episode_id: 1},{episode_id: 2},{episode_id: 3}];
 
-      wrapper.instance().setMovie(['the land before time', 'the land before time ii'])
+      wrapper.instance().componentDidMount(['The Phantom Menace', 'Attack of the Clones', 'Revenge of the Sith'])
       expect(wrapper.state('movies')).toEqual(movieData)
   });
 
