@@ -15,7 +15,8 @@ class App extends Component {
       userName: '',
       userQuote: '',
       userRank: '',
-      isLoading: true
+      isLoading: true,
+      favourites: []
     }
   }
 
@@ -38,8 +39,20 @@ class App extends Component {
     getCharacters(charactersUrl)
     .then(characterData => this.setState({characters: characterData}))
   }
-  
 
+  toggleFavourites = (id) => {
+    const { favourites } = this.state;
+    favourites.includes(id) ? this.deleteFavourites(id) : this.addFavourites(id);
+  }
+
+  addFavourites = () => {
+
+  }
+
+  deleteFavourites = () => {
+
+  }
+  
   render() {
     const { isLoading, userName, userQuote, userRank } = this.state;
     return (
