@@ -45,12 +45,13 @@ class App extends Component {
     favourites.includes(id) ? this.deleteFavourites(id) : this.addFavourites(id);
   }
 
-  addFavourites = () => {
-
+  addFavourites = (id) => {
+    const { favourites } = this.state;
+    return this.setState({ favourites : [...favourites, id] });
   }
 
-  deleteFavourites = () => {
-
+  deleteFavourites = (id) => {
+    const { favourites } = this.state;
   }
   
   render() {
