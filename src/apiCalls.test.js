@@ -22,6 +22,15 @@ describe('apiCalls', () => {
     expect(getMovies()).resolves.toEqual(mockData)
   });
 
+  it('should return an error if the server is down', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      });
+      expect(getMovies()).rejects.toEqual(Error('There was an error getting the data.'))
+    });
+
   it('should return character info when getCharacters is called', () => {
     const mockCharacters = [{name: 'Princess Leia'}, {name: 'Luke Skywalker'}, {name: 'Yoda'}]
     
