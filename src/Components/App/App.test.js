@@ -9,6 +9,8 @@ describe('App', () => {
       wrapper = shallow(<App />)
   });
 
-  
+  it('should match a snapshot of all the information being passed in correctly', () => {
+      expect(wrapper).toMatchSnapshot();
+  });
 
 });
