@@ -1,6 +1,7 @@
 import React from 'react';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import NavBar from '../NavBar/NavBar';
 
 const CharactersContainer = ({ characters }) => {
     const allCharacters = characters.map((character) => {
@@ -8,7 +9,10 @@ const CharactersContainer = ({ characters }) => {
     })
    return (
        <section className='characters-section'>
-          {allCharacters} 
+           <NavBar />
+           <section className='characters'>
+            {allCharacters} 
+           </section>
        </section>
    )
 }
