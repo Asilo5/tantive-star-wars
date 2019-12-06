@@ -2,7 +2,7 @@
 
 exports[`CharactersContainer should match snapshot with all data passing in correctly 1`] = `
 <section>
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -17,7 +17,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="200000"
     species="Human"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -33,7 +33,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="200000"
     species="Droid"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -50,7 +50,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="4500000000"
     species="Droid"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -64,7 +64,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="200000"
     species="Human"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -79,7 +79,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="2000000000"
     species="Human"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -95,7 +95,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="unknown"
     species="Human"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -110,7 +110,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="45000000"
     species="Wookiee"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -124,7 +124,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="3000000000"
     species="Human"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
@@ -137,7 +137,7 @@ exports[`CharactersContainer should match snapshot with all data passing in corr
     population="7000000000"
     species="Hutt"
   />
-  <[object Object]
+  <CharacterCard
     films={
       Array [
         undefined,
