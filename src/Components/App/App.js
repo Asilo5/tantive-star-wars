@@ -19,11 +19,11 @@ class App extends Component {
     }
   }
 
-  userInfo = ({name, rank, quote}) => {
+  userInfo = ({name, quote, rank}) => {
      this.setState({
       userName: name,
-      userQuote: rank,
-      userRank: quote
+      userQuote: quote,
+      userRank: rank
      })
   }
 
