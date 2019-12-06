@@ -1,57 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login should match snapshot with all information passing in correctly 1`] = `
-<form>
-  <input
-    className="user-name"
-    name="name"
-    onChange={[Function]}
-    placeholder="Must Name Here"
-    type="text"
-    value=""
+<div>
+  <h1>
+    Star Wars Trivia
+  </h1>
+  <img
+    alt="yoda's face"
+    className="yoda_head"
+    src="http://pluspng.com/img-png/yoda-head-png-download-800.gif"
   />
-  <input
-    className="user-quote"
-    name="quote"
-    onChange={[Function]}
-    placeholder="Quote Favourite"
-    type="text"
-    value=""
-  />
-  <p>
-    What Knowledge have you from Star Wars?
-  </p>
-  <section>
-    <button
-      name="rank"
-      onClick={[Function]}
-      type="button"
-      value="Novice"
-    >
-      Novice
-    </button>
-    <button
-      name="rank"
-      onClick={[Function]}
-      type="button"
-      value="Intermediate"
-    >
-      Intermediate
-    </button>
-    <button
-      name="rank"
-      onClick={[Function]}
-      type="button"
-      value="Expert"
-    >
-      Expert
-    </button>
-  </section>
-  <button
-    className="submit-btn-error"
-    disabled={true}
+  <h2
+    className="tantive_heading"
   >
-     Inputs Must Fill 
-  </button>
-</form>
+    Tantive Edition
+  </h2>
+  <form>
+    <input
+      className="user-name"
+      name="name"
+      onChange={[Function]}
+      placeholder="Must Name Here"
+      type="text"
+      value=""
+    />
+    <input
+      className="user-quote"
+      name="quote"
+      onChange={[Function]}
+      placeholder="Quote Favourite"
+      type="text"
+      value=""
+    />
+    <p>
+      What Knowledge have you from Star Wars?
+    </p>
+    <section>
+      <button
+        className="knowledge_button"
+        name="rank"
+        onClick={[Function]}
+        type="button"
+        value="Novice"
+      >
+        Novice
+      </button>
+      <button
+        className="knowledge_button"
+        name="rank"
+        onClick={[Function]}
+        type="button"
+        value="Intermediate"
+      >
+        Intermediate
+      </button>
+      <button
+        className="knowledge_button"
+        name="rank"
+        onClick={[Function]}
+        type="button"
+        value="Expert"
+      >
+        Expert
+      </button>
+    </section>
+    <button
+      className="submit-btn-error"
+      disabled={true}
+    >
+       Inputs Must Fill 
+    </button>
+  </form>
+</div>
 `;
