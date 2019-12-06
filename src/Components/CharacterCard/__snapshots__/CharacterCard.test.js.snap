@@ -1,26 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CharacterCard should match snapshot with all information passing in correctly 1`] = `
-<section>
+<section
+  className="card"
+>
+  <p
+    className="favourite-icon"
+  >
+    <FaJedi />
+  </p>
   <h2>
     Leia
   </h2>
+  <h3>
+    Homeworld:
+  </h3>
+  <p />
+  <h3>
+    Population:
+  </h3>
   <p>
-    Homeworld: 
-    Alderan
-  </p>
-  <p>
-    Population: 
     200000000000
   </p>
-  <p>
+  <h3>
     Species: 
+  </h3>
+  <p>
     Human
   </p>
-  <p>
+  <h3>
     Seen in:
+  </h3>
+  <p
+    key="0"
+  >
     The Empire Strikes Back
+  </p>
+  <p
+    key="1"
+  >
     Revenge of the Sith
+  </p>
+  <p
+    key="2"
+  >
     Return of the Jedi
   </p>
 </section>
