@@ -10,7 +10,7 @@ const CharacterCard = ({ name, homeWorld, population, species, films }) => {
         <p>Species: {species}</p>
         <p>Seen in:{films}</p>
       </section>
-  )
+  ) 
 }
 
 export default CharacterCard;

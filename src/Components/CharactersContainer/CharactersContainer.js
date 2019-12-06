@@ -7,8 +7,8 @@ const CharactersContainer = ({ characters }) => {
         return <CharacterCard key={character.id} {...character} />
     })
    return (
-       <section>
-          {allCharacters}
+       <section className='characters-section'>
+          {allCharacters} 
        </section>
    )
 }
