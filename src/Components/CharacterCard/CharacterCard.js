@@ -3,7 +3,7 @@ import './CharacterCard.scss';
 
 const CharacterCard = ({ name, homeWorld, population, species, films }) => {
   return (
-      <section>
+      <section className='card'>
         <h2>{name}</h2>
         <p>Homeworld: {homeWorld}</p>
         <p>Population: {population}</p>
