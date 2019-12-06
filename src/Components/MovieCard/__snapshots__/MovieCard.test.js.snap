@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match snapshot with all information passing in correctly 1`] = `
+<article
+  className="movieCard"
+>
+  <ul>
+    <li />
+    <li>
+      Episode: 
+    </li>
+    <li>
+      Released in 
+    </li>
+    <Link
+      to="/characters"
+    >
+      <button
+        className="movie_card_btn"
+        onClick={[Function]}
+        type="submit"
+      >
+        View Characters
+      </button>
+    </Link>
+  </ul>
+</article>
+`;
