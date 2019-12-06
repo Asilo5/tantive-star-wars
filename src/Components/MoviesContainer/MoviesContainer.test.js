@@ -5,7 +5,7 @@ import MoviesContainer from './MoviesContainer';
 describe('MoviesContainer', () => {
 
     it('should match snapshot with all information passing in correctly', () => {
-        const wrapper = shallow(<MoviesContainer movies={[
+        const wrapper = shallow(<MoviesContainer mockMovies={[
             {
               title: 'The Phantom Menace',
               episode_id: 1,
