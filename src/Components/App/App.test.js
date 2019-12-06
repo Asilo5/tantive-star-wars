@@ -53,7 +53,7 @@ describe('App', () => {
 //     });
 //   });
 
-  it.skip('should update state when user submits form on login', () => {
+  it('should update state when user submits form on login', () => {
       const mockUserInfo = {
         userName: 'Consuelo',
         userQuote: 'Go Forth I Will',
@@ -69,7 +69,7 @@ describe('App', () => {
       expect(wrapper.state('userRank')).toEqual('Expert');
   });
 
-  it('should update state with an movies when getMovies is called', async () => {
+  it.skip('should update state with an movies when getMovies is called', async () => {
      getMovies.mockImplementation(() => {
          return Promise.resolve(
          { title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'}
