@@ -1,13 +1,21 @@
-$accent_color: red;
+$accent_color: #00D800;
 
 %button_styles {
     border-radius: 10px;
     font-size: 2em;
 }
 
+%hover_styles {
+    cursor: pointer;
+    font-weight: 800;
+    transform: scale(1.1);
+    transition: all .1s ease-in-out;
+}
+
 form {
     background: rgba(255, 255, 255, 0.322);
     border: 1px solid $accent_color;
+    box-shadow: -0.5px -0.5px, -0.5em -0.8em 1.3em $accent_color;
     width: 50%;
     margin: auto;
     border-radius: 20px;
@@ -41,6 +49,7 @@ form {
         color: $accent_color;
         &:hover {
             border: 2px solid $accent_color;
+            @extend %hover_styles;
         }
     }
     .submit-btn-error {
@@ -48,10 +57,11 @@ form {
       width: 75%;
       cursor: not-allowed;
       background-color: gray;
-      color: black;
+      color: darkslategray;
       &:hover {
         border: 2px solid transparent;
-        color: gray;
+        color: $accent_color;
+        @extend %hover_styles;
       }
     }
 }
@@ -69,6 +79,7 @@ section {
         &:focus {
            border: 2px solid $accent_color;
            color: $accent_color;
+           @extend %hover_styles;
         }
     }
 }
