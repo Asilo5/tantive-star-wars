@@ -3,7 +3,7 @@ import './CharacterCard.scss';
 import { FaJedi } from "react-icons/fa";
 
 const CharacterCard = ({ name, homeworld, population, species, films }) => {
-  let theFilm = films.map((film) => <p>{film}</p>)
+  let theFilm = films.map((film, i) => <p key={i}>{film}</p>)
   return (
       <section className='card'>
         <p className='favourite-icon'><FaJedi/></p>

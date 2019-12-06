@@ -1,154 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CharactersContainer should match snapshot with all data passing in correctly 1`] = `
-<section>
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Tatooine"
-    name="Luke Skywalker"
-    population="200000"
-    species="Human"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Tatooine"
-    name="C-3PO"
-    population="200000"
-    species="Droid"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Naboo"
-    name="R2-D2"
-    population="4500000000"
-    species="Droid"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Tatooine"
-    name="Darth Vader"
-    population="200000"
-    species="Human"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Alderaan"
-    name="Leia Organa"
-    population="2000000000"
-    species="Human"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Stewjon"
-    name="Obi-Wan Kenobi"
-    population="unknown"
-    species="Human"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Kashyyyk"
-    name="Chewbacca"
-    population="45000000"
-    species="Wookiee"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Corellia"
-    name="Han Solo"
-    population="3000000000"
-    species="Human"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Nal Hutta"
-    name="Jabba Desilijic Tiure"
-    population="7000000000"
-    species="Hutt"
-  />
-  <[object Object]
-    films={
-      Array [
-        undefined,
-        undefined,
-        undefined,
-      ]
-    }
-    homeworld="Corellia"
-    name="Wedge Antilles"
-    population="3000000000"
-    species="Human"
-  />
+<section
+  className="characters-section"
+>
+  <NavBar />
+  <section
+    className="characters"
+  >
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Tatooine"
+      key="Luke Skywalker"
+      name="Luke Skywalker"
+      population="200000"
+      species="Human"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Tatooine"
+      key="C-3PO"
+      name="C-3PO"
+      population="200000"
+      species="Droid"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Naboo"
+      key="R2-D2"
+      name="R2-D2"
+      population="4500000000"
+      species="Droid"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Tatooine"
+      key="Darth Vader"
+      name="Darth Vader"
+      population="200000"
+      species="Human"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Alderaan"
+      key="Leia Organa"
+      name="Leia Organa"
+      population="2000000000"
+      species="Human"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Stewjon"
+      key="Obi-Wan Kenobi"
+      name="Obi-Wan Kenobi"
+      population="unknown"
+      species="Human"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Kashyyyk"
+      key="Chewbacca"
+      name="Chewbacca"
+      population="45000000"
+      species="Wookiee"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Corellia"
+      key="Han Solo"
+      name="Han Solo"
+      population="3000000000"
+      species="Human"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Nal Hutta"
+      key="Jabba Desilijic Tiure"
+      name="Jabba Desilijic Tiure"
+      population="7000000000"
+      species="Hutt"
+    />
+    <CharacterCard
+      films={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      homeworld="Corellia"
+      key="Wedge Antilles"
+      name="Wedge Antilles"
+      population="3000000000"
+      species="Human"
+    />
+  </section>
 </section>
 `;
