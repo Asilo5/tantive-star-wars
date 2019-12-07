@@ -64,14 +64,24 @@ describe('App', () => {
     wrapper.setState({ userName: 'name', userQuote: 'quote', userRank: 'rank' });
   });
 
-  it.skip('should update state with movies when getMovies is called', async () => {
-     await wrapper.instance().getMovies([]);
-     expect(getMovies).toHaveBeenCalled();
-  });
+  // it.skip('should update state with movies when getMovies is called', async () => {
+  //    await wrapper.instance().getMovies();
+  //    expect(getMovies).toHaveBeenCalled();
+  // });
 
   it('should retrieve the characters', async () => {
     await wrapper.instance().setCharacters();
     expect(getCharacters).toHaveBeenCalled();
   });
+
+  describe('favourite testing', () => {
+    it.skip('should toggle favourites based on an id', () => {
+      wrapper.instance().toggleFavourites();
+      expect(wrapper.state().favourites).toEqual()
+    });
+
+    it.skip('should')
+  });
+
 
 });
