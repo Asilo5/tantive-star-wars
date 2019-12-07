@@ -42,18 +42,8 @@ describe('App', () => {
     expect(getMovies).toHaveBeenCalled();
   });
 
-//   it.skip('should have an empty state to before login', () => {
-//     expect(wrapper.state()).toEqual({
-//         movies: [],
-//         characters: [],
-//         userName: '',
-//         userQuote: '',
-//         userRank: '',
-//         isLoading: true
-//     });
-//   });
-
   it('should update state when user submits form on login', () => {
+    shallow(<App />)
       const mockUserInfo = {
         userName: 'Consuelo',
         userQuote: 'Go Forth I Will',
@@ -64,24 +54,24 @@ describe('App', () => {
       expect(wrapper.state('userQuote')).toEqual('');
       expect(wrapper.state('userRank')).toEqual('');
       wrapper.instance().userInfo(mockUserInfo);
-      expect(wrapper.state('userName')).toEqual('Consuelo');
-      expect(wrapper.state('userQuote')).toEqual('Go Forth I Will');
-      expect(wrapper.state('userRank')).toEqual('Expert');
+      expect(wrapper.state('name')).toEqual('Consuelo');
+      expect(wrapper.state('quote')).toEqual('Go Forth I Will');
+      expect(wrapper.state('rank')).toEqual('Expert');
   });
 
-  it.skip('should update state with an movies when getMovies is called', async () => {
+  it.skip('should update state with movies when getMovies is called', async () => {
      getMovies.mockImplementation(() => {
          return Promise.resolve(
          { title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'}
          );
      })
-     const mockIdea = { title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'};
-     const expected = [{ title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'}, mockIdea];
+     shallow(<App />)
+     const expected = [{ title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'}];
 
-     await wrapper.instance().getMovies(mockIdea);
+     await wrapper.instance().getMovies([]);
 
-     expect(getMovies).toHaveBeenCalledWith(mockIdea);
+     expect(getMovies).toHaveBeenCalledWith();
      expect(wrapper.state('movies')).toEqual(expected);
-    });
+  });
 
 });
