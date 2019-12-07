@@ -77,10 +77,18 @@ describe('App', () => {
   describe('favourite testing', () => {
     it.skip('should toggle favourites based on an id', () => {
       wrapper.instance().toggleFavourites();
-      expect(wrapper.state().favourites).toEqual()
+      expect(wrapper.state('favourites').favourites).toEqual()
     });
 
-    it.skip('should')
+    it.skip('should be able to add a favourite to state based on an it', () => {
+      wrapper.instance().addFavourites();
+      expect(wrapper.state('favourites').favourites).toEqual('')
+    });
+
+    it.skip('should be able to delete a favourite to state based on an it', () => {
+      wrapper.instance().deleteFavourites();
+      expect(wrapper.state('favourites').favourites).toEqual('')
+    })
   });
 
 
