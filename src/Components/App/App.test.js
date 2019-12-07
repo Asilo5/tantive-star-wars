@@ -97,7 +97,7 @@ describe('App', () => {
       expect(wrapper.state('favourites')).toEqual([character])
     });
 
-    it.skip('should be able to delete a favourite character to state based on an it', () => {
+    it('should be able to delete a favourite character to state based on an it', () => {
       wrapper.instance().deleteFavourites(character);
       expect(wrapper.state('favourites')).toEqual([])
     })
