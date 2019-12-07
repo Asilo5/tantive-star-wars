@@ -75,19 +75,31 @@ describe('App', () => {
   });
 
   describe('favourite testing', () => {
-    it.skip('should toggle favourites based on an id', () => {
-      wrapper.instance().toggleFavourites();
-      expect(wrapper.state('favourites').favourites).toEqual()
+    let character = [{
+      name: 'Leia',
+      homeWorld: 'Alderan',
+      population: '200000000000',
+      species: 'Human',
+      films: [
+        "The Empire Strikes Back",
+         "Revenge of the Sith",
+         "Return of the Jedi"
+      ]
+    }]; 
+    it('should toggle favourite characters based on an id', () => {
+      expect(wrapper.state('favourites')).toEqual([])
+      wrapper.instance().toggleFavourites(character);
+      expect(wrapper.state('favourites')).toEqual([character])
     });
 
-    it.skip('should be able to add a favourite to state based on an it', () => {
-      wrapper.instance().addFavourites();
-      expect(wrapper.state('favourites').favourites).toEqual('')
+    it.skip('should be able to add a favourite character to state based on an it', () => {
+      wrapper.instance().addFavourites(character);
+      expect(wrapper.state('favourites')).toEqual([character])
     });
 
-    it.skip('should be able to delete a favourite to state based on an it', () => {
-      wrapper.instance().deleteFavourites();
-      expect(wrapper.state('favourites').favourites).toEqual('')
+    it.skip('should be able to delete a favourite character to state based on an it', () => {
+      wrapper.instance().deleteFavourites(character);
+      expect(wrapper.state('favourites')).toEqual([])
     })
   });
 
