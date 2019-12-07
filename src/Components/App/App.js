@@ -6,6 +6,7 @@ import { getMovies, getCharacters } from '../../apiCalls';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import NavBar from '../NavBar/NavBar';
+import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
 
 class App extends Component {
   constructor() {
@@ -76,6 +77,12 @@ class App extends Component {
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
             </section>
               } />
+          <Route path='/favourties' render={() =>
+            <section>
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <FavouritesContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
+            </section>
+          } />    
         </Switch>
       </main>
     );
