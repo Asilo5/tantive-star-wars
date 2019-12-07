@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './MoviesContainer.scss';
-// import NavBar from '../NavBar/NavBar';
 
 const MoviesContainer = ({movies, userName, userQuote, userRank, setCharacters }) => {
     let allMovies = movies.map(movie => {
