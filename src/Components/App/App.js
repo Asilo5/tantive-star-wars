@@ -63,10 +63,19 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
-          {isLoading === false && <NavBar />}
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
-          (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/> } />)}
-          <Route path='/characters' render={() => <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> } />
+          (<Route exact path='/movies' render={() => 
+            <section className='movie-section'>
+             <NavBar />
+             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
+            </section>
+          } />)}
+          <Route path='/movies/:id' render={() => 
+            <section className='movie-section'>
+              <NavBar />
+              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+            </section>
+              } />
         </Switch>
       </main>
     );
