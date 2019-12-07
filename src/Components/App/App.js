@@ -30,7 +30,7 @@ class App extends Component {
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-     .then(movies => this.setState({movies: movies, isLoading: false}))
+     .then(movies => this.setState({ movies, isLoading: false}))
      .catch(err => console.log(err))
   }
 
