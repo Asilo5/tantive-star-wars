@@ -52,6 +52,8 @@ class App extends Component {
 
   deleteFavourites = (id) => {
     const { favourites } = this.state;
+    let deletedFav = favourites.filter((favourite) => favourite.id !== id);
+    return this.setState({ favourites : deletedFav });
   }
   
   render() {
