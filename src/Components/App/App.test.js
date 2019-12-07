@@ -92,7 +92,7 @@ describe('App', () => {
       expect(wrapper.state('favourites')).toEqual([character])
     });
 
-    it.skip('should be able to add a favourite character to state based on an it', () => {
+    it('should be able to add a favourite character to state based on an it', () => {
       wrapper.instance().addFavourites(character);
       expect(wrapper.state('favourites')).toEqual([character])
     });
