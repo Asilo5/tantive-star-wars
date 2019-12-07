@@ -2,7 +2,7 @@
  import './NavBar.scss';
  import { NavLink } from 'react-router-dom';
 
- const NavBar = ({userName, userQuote, userRank}) => {
+ const NavBar = ({userName, userQuote, userRank, favCount}) => {
      return (
          <nav>
             <div>
@@ -13,7 +13,7 @@
             </div>
             <div className='nav-links'>
                 <NavLink to='/movies' className='nav' activeClassName='active-nav' >Movies</NavLink>
-                <NavLink to='/favourites' className='nav' activeClassName='active-nav' >Favourites</NavLink>
+                <NavLink to='/favourites' className='nav' activeClassName='active-nav' >Favourites {favCount}</NavLink>
                 <NavLink exact to='/' className='nav' activeClassName='active-nav' >Log Out</NavLink>
             </div>
          </nav>
