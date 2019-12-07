@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import { getMovies } from '../../apiCalls'
-
+import { getMovies, getCharacters } from '../../apiCalls'
 jest.mock('../../apiCalls.js')
 
 describe('App', () => {
@@ -10,26 +9,34 @@ describe('App', () => {
       mockMovies;
 
   beforeEach(() => {
-    mockMovies = [
-        {
-          title: 'The Phantom Menace', 
-          episode_id: 1, 
-          release_date: '1999',
-          characters: ['person'], 
-          opening_crawl: 'Turmoil has engulfed...'
-        }, 
-        {
-          title: 'Attack of the Clones', 
-          episode_id: 2, 
-          release_date: '2002',
-          characters: ['person'], 
-          opening_crawl: 'Turmoil has engulfed...'
-        }
-    ]
-    
     getMovies.mockImplementation(() => {
-      return Promise.resolve(mockMovies);
+      return Promise.resolve([{}, {}])
     });
+
+    getCharacters.mockImplementation(() => {
+      return Promise.resolve([{}, {}])
+    });
+
+    // mockMovies = [
+    //     {
+    //       title: 'The Phantom Menace', 
+    //       episode_id: 1, 
+    //       release_date: '1999',
+    //       characters: ['person'], 
+    //       opening_crawl: 'Turmoil has engulfed...'
+    //     }, 
+    //     {
+    //       title: 'Attack of the Clones', 
+    //       episode_id: 2, 
+    //       release_date: '2002',
+    //       characters: ['person'], 
+    //       opening_crawl: 'Turmoil has engulfed...'
+    //     }
+    // ]
+    
+    // getMovies.mockImplementation(() => {
+    //   return Promise.resolve(mockMovies);
+    // });
     wrapper = shallow(<App />)
   });
 
@@ -37,8 +44,10 @@ describe('App', () => {
       expect(wrapper).toMatchSnapshot();
   });
 
-  it('should retrieve movies after mounting', () => {
-    expect(getMovies).toHaveBeenCalled();
+  describe('componentDidMount', () => {
+    it('should retrieve movies after mounting', () => {
+      expect(getMovies).toHaveBeenCalled();
+    });        
   });
 
   it('should have default values of empty strings for userName, userQuote and userRank', () => {
@@ -56,18 +65,13 @@ describe('App', () => {
   });
 
   it.skip('should update state with movies when getMovies is called', async () => {
-     getMovies.mockImplementation(() => {
-         return Promise.resolve(
-         { title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'}
-         );
-     })
-     shallow(<App />)
-     const expected = [{ title: 'The Phantom Menace', episode_id: 1, release_date: '1999',characters: ['person'], opening_crawl: 'Turmoil has engulfed...'}];
-
      await wrapper.instance().getMovies([]);
+     expect(getMovies).toHaveBeenCalled();
+  });
 
-     expect(getMovies).toHaveBeenCalledWith();
-     expect(wrapper.state('movies')).toEqual(expected);
+  it('should retrieve the characters', async () => {
+    await wrapper.instance().setCharacters();
+    expect(getCharacters).toHaveBeenCalled();
   });
 
 });
