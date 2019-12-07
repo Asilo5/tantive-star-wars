@@ -1,7 +1,7 @@
 import React from 'react';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard';
-import NavBar from '../NavBar/NavBar';
+// import NavBar from '../NavBar/NavBar';
 
 const CharactersContainer = ({ characters, toggleFavourites, favourites }) => {
     const allCharacters = characters.map((character) => {
@@ -9,7 +9,7 @@ const CharactersContainer = ({ characters, toggleFavourites, favourites }) => {
     })
    return (
        <section className='characters-section'>
-           <NavBar />
+           {/* <NavBar /> */}
            <section className='characters'>
             {allCharacters} 
            </section>
