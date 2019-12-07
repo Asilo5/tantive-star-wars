@@ -41,20 +41,18 @@ describe('App', () => {
     expect(getMovies).toHaveBeenCalled();
   });
 
-  it.skip('should update state when user submits form on login', () => {
-      const mockUserInfo = {
-        userName: 'Consuelo',
-        userQuote: 'Go Forth I Will',
-        userRank: 'Expert'
-      }
-// should this be broken out into 3 seperate test for each state?
-      expect(wrapper.state('userName')).toEqual('');
-      expect(wrapper.state('userQuote')).toEqual('');
-      expect(wrapper.state('userRank')).toEqual('');
-      wrapper.instance().userInfo(mockUserInfo);
-      expect(wrapper.state('userName')).toEqual('Consuelo');
-      expect(wrapper.state('userQuote')).toEqual('Go Forth I Will');
-      expect(wrapper.state('userRank')).toEqual('Expert');
+  it('should have default values of empty strings for userName, userQuote and userRank', () => {
+    expect(wrapper.state().userName).toEqual('');
+    expect(wrapper.state().userQuote).toEqual('');
+    expect(wrapper.state().userRank).toEqual('');
+  });
+
+  it('should have a default value of true for isLoading', () => {
+    expect(wrapper.state().isLoading).toEqual(false);
+  });
+
+  it('should set the state of userName, userQuote, userRanking', () => {
+    wrapper.setState({ userName: 'name', userQuote: 'quote', userRank: 'rank' });
   });
 
   it.skip('should update state with movies when getMovies is called', async () => {
