@@ -5,6 +5,7 @@ import './App.scss';
 import { getMovies, getCharacters } from '../../apiCalls';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
+import NavBar from '../NavBar/NavBar';
 
 class App extends Component {
   constructor() {
@@ -63,8 +64,18 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
-          (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/> } />)}
-          <Route path='/characters' render={() => <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> } />
+          (<Route exact path='/movies' render={() => 
+            <section className='movie-section'>
+             <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
+            </section>
+          } />)}
+          <Route path='/movies/:id' render={() => 
+            <section className='movie-section'>
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+            </section>
+              } />
         </Switch>
       </main>
     );
