@@ -15,7 +15,8 @@ class App extends Component {
       userName: '',
       userQuote: '',
       userRank: '',
-      isLoading: true
+      isLoading: true,
+      favourites: []
     }
   }
 
@@ -38,17 +39,32 @@ class App extends Component {
     getCharacters(charactersUrl)
     .then(characterData => this.setState({characters: characterData}))
   }
-  
 
+  toggleFavourites = (id) => {
+    const { favourites } = this.state;
+    favourites.includes(id) ? this.deleteFavourites(id) : this.addFavourites(id);
+  }
+
+  addFavourites = (id) => {
+    const { favourites } = this.state;
+    return this.setState({ favourites : [...favourites, id] });
+  }
+
+  deleteFavourites = (id) => {
+    const { favourites } = this.state;
+    let deletedFav = favourites.filter((favourite) => favourite !== id);
+    return this.setState({ favourites : deletedFav });
+  }
+  
   render() {
-    const { isLoading, userName, userQuote, userRank } = this.state;
+    const { isLoading, userName, userQuote, userRank, favourites } = this.state;
     return (
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
           (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/> } />)}
-          <Route path='/characters' render={() => <CharactersContainer characters={this.state.characters} /> } />
+          <Route path='/characters' render={() => <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> } />
         </Switch>
       </main>
     );
