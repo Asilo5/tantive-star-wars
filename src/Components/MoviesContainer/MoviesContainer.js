@@ -17,12 +17,9 @@ const MoviesContainer = ({movies, userName, userQuote, userRank, setCharacters }
             />
         }); 
     return (
-        <section className='movie-section'>
-            {/* <NavBar userName={userName} userQuote={userQuote} userRank={userRank}/>  */}
             <section className='movie-container'>
               {allMovies}
             </section>
-        </section>
     )
 }
 
