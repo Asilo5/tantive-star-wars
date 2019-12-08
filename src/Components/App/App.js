@@ -78,9 +78,9 @@ class App extends Component {
             </section>
               } />
           <Route path='/favourites/' render={() =>
-            <section>
+            <section className='movie-section'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-              <FavouritesContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
+              <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
             </section>
           } />    
         </Switch>
