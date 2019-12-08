@@ -19,6 +19,8 @@ const FavouritesContainer = ({ toggleFavourites, favourites, characters }) => {
 
 const characterList = characters.map((character) => {
     console.log(characters)
+    console.log(favourites)
+    if (favourites.includes(character.id)) {
     return <CharacterCard
       id={character.id}
       name={character.name} 
@@ -30,6 +32,7 @@ const characterList = characters.map((character) => {
       toggleFavourites={toggleFavourites} 
       favourites={favourites}
     />
+    }
     });
 
    return (
