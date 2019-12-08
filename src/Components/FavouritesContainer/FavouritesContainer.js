@@ -18,25 +18,22 @@ const FavouritesContainer = ({ toggleFavourites, favourites, characters }) => {
     } 
 
 const characterList = characters.map((character) => {
-    console.log(characters)
-    console.log(favourites)
     if (favourites.includes(character.id)) {
-    return <CharacterCard
-      id={character.id}
-      name={character.name} 
-      homeworld={character.homeworld}
-      population={character.population}
-      species={character.species}
-      films={character.films}
-    //   character={favourites} 
-      toggleFavourites={toggleFavourites} 
-      favourites={favourites}
-    />
+      return <CharacterCard
+        id={character.id}
+        name={character.name} 
+        homeworld={character.homeworld}
+        population={character.population}
+        species={character.species}
+        films={character.films}
+        toggleFavourites={toggleFavourites} 
+        favourites={favourites}
+        />
     }
-    });
+});
 
    return (
-     <section className='favourtie'>
+     <section className='favourite'>
        {characterList}
      </section>
     )
