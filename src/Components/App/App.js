@@ -77,7 +77,7 @@ class App extends Component {
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
             </section>
               } />
-          <Route path='/favourties/:id' render={() =>
+          <Route path='/favourites/' render={() =>
             <section>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
               <FavouritesContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
