@@ -5,7 +5,7 @@ import CharacterCard from '../CharacterCard/CharacterCard';
 
 
 const FavouritesContainer = ({ toggleFavourites, favourites, characters }) => {
-    if(favourites.length === 0) {
+    if(favourites === 0) {
       return (
         <section className='favourite'>
         <h2 className='fav_h2'>Want to see your favorite character!</h2>
