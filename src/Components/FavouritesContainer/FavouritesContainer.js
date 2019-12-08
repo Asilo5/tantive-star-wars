@@ -1,24 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './FavouritesContainer.scss';
-// import CharacterCard from '../CharacterCard/CharacterCard';
+import CharacterCard from '../CharacterCard/CharacterCard';
 import { FaJedi } from "react-icons/fa";
 
 
-const FavouritesContainer = ({ id, name, homeworld, population, species,toggleFavourites, favourites }) => {
+const FavouritesContainer = ({ id, name, homeworld, population, species,toggleFavourites, favourites, characters, films }) => {
     if(favourites.length === 0) {
       return (
-        <>
+        <section className='favourite'>
         <h2 className='fav_h2'>Want to see your favorite character!</h2>
           <h3 className='fav_h3'>Go back to movies and select a few first.</h3>
           <Link to='/movies'>
             <button className='back_to_movies__btn'>Back to Movies</button>
           </Link>
-        </>
+        </section>
      ) 
     } 
-    const theFilm = favourites.map((favourite, i) => <p key={i}>{favourite}</p>);
+
+    const allCharacters = characters.map((character) => {
+        return <CharacterCard key={character.name} {...character} toggleFavourites={toggleFavourites} favourites={favourites} />
+    })
+    
     const toggleIcon = favourites.includes(id) ? 'favourite-icon' : 'jedi-icon';
+    const theFilm = films.map((film, i) => <p key={i}>{film}</p>);
+
     return (
       <section className='card'>
         <p className={toggleIcon} onClick={() => toggleFavourites(id)}><FaJedi/></p>
