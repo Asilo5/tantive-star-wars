@@ -3,10 +3,10 @@ $hover-color: gold;
 
 .favourite {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     overflow: scroll;
+    height: 61em;
     padding: 20px;
 }
 
