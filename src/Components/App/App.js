@@ -6,6 +6,7 @@ import { getMovies, getCharacters } from '../../apiCalls';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import NavBar from '../NavBar/NavBar';
+import ScrollText from '../ScrollText/ScrollText';
 
 class App extends Component {
   constructor() {
@@ -76,6 +77,12 @@ class App extends Component {
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
             </section>
               } />
+          <Route path='/scrollText' render={() =>
+            <section className='movie-section'>
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <ScrollText movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+          </section>
+              } />    
         </Switch>
       </main>
     );
