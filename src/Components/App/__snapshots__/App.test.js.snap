@@ -16,7 +16,7 @@ exports[`App should match a snapshot of all the information being passed in corr
       render={[Function]}
     />
     <Route
-      path="/characters"
+      path="/movies/:id"
       render={[Function]}
     />
   </Switch>

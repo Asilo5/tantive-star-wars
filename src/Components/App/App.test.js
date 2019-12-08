@@ -62,6 +62,9 @@ describe('App', () => {
 
   it('should set the state of userName, userQuote, userRanking', () => {
     wrapper.setState({ userName: 'name', userQuote: 'quote', userRank: 'rank' });
+    expect(wrapper.state().userName).toEqual('name');
+    expect(wrapper.state().userQuote).toEqual('quote');
+    expect(wrapper.state().userRank).toEqual('rank');
   });
 
   // it.skip('should update state with movies when getMovies is called', async () => {
