@@ -5,7 +5,7 @@ import './FavouritesContainer.scss';
 import { FaJedi } from "react-icons/fa";
 
 
-const FavouritesContainer = ({ id, name, homeworld, population, species, films,toggleFavourites, favourites }) => {
+const FavouritesContainer = ({ id, name, homeworld, population, species,toggleFavourites, favourites }) => {
     if(favourites.length === 0) {
       return (
         <>
@@ -17,9 +17,9 @@ const FavouritesContainer = ({ id, name, homeworld, population, species, films,t
         </>
      ) 
     } 
-    const theFilm = films.map((film, i) => <p key={i}>{film}</p>);
-  const toggleIcon = favourites.includes(id) ? 'favourite-icon' : 'jedi-icon';
-  return (
+    const theFilm = favourites.map((favourite, i) => <p key={i}>{favourite}</p>);
+    const toggleIcon = favourites.includes(id) ? 'favourite-icon' : 'jedi-icon';
+    return (
       <section className='card'>
         <p className={toggleIcon} onClick={() => toggleFavourites(id)}><FaJedi/></p>
         <h2>{name}</h2>
