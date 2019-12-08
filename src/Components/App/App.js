@@ -78,7 +78,7 @@ class App extends Component {
             </section>
               } />
           <Route path='/scrollText' render={() =>
-            <section className='movie-section'>
+            <section className='scrollText'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
               <ScrollText movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
           </section>
