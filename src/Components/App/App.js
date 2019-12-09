@@ -7,6 +7,7 @@ import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import NavBar from '../NavBar/NavBar';
 import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
+import ScrollText from '../ScrollText/ScrollText';
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
     this.state = {
       movies: [],
       characters: [],
+      // selectedMovie: {},
       userName: '',
       userQuote: '',
       userRank: '',
@@ -35,11 +37,13 @@ class App extends Component {
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
      .then(movies => this.setState({ movies, isLoading: false}))
      .catch(err => console.log(err))
-  }
+    }
 
   setCharacters = (charactersUrl) => {
-    getCharacters(charactersUrl)
-    .then(characterData => this.setState({characters: characterData}))
+    // let id = parseInt(e.target.id)
+    // let selectedMovie = this.state.movies[id-1];
+    // this.setState({selectedMovie: selectedMovie})
+    getCharacters(charactersUrl).then(characterData => this.setState({characters: characterData}))
   }
 
   toggleFavourites = (id) => {
@@ -74,7 +78,8 @@ class App extends Component {
           <Route path='/movies/:id' render={() => 
             <section className='movie-section'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
+              <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
             </section>
               } />
           <Route path='/favourites/' render={() =>

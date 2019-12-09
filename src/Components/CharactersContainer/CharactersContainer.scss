@@ -1,8 +1,11 @@
 .characters {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    overflow: scroll;
     height: 61em;
+    justify-content: center;
+    left: 18%;
+    overflow: scroll;
     padding: 20px;
+    position: absolute;
+    top: 44%;
  }
