@@ -15,7 +15,6 @@ class App extends Component {
     this.state = {
       movies: [],
       characters: [],
-      // selectedMovie: {},
       userName: '',
       userQuote: '',
       userRank: '',
@@ -40,9 +39,6 @@ class App extends Component {
     }
 
   setCharacters = (charactersUrl) => {
-    // let id = parseInt(e.target.id)
-    // let selectedMovie = this.state.movies[id-1];
-    // this.setState({selectedMovie: selectedMovie})
     getCharacters(charactersUrl).then(characterData => this.setState({characters: characterData}))
   }
 
@@ -63,7 +59,8 @@ class App extends Component {
   }
   
   render() {
-    const { isLoading, userName, userQuote, userRank, favourites } = this.state;
+    const { isLoading, userName, userQuote, userRank, favourites, movies } = this.state;
+    console.log(movies)
     return (
       <main className="App">
         <Switch>
