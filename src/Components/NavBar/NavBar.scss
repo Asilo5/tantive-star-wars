@@ -41,6 +41,10 @@ nav {
         &:hover {
            border-top: 1px solid $primary-color;
            border-bottom: 1px solid $primary-color;
+           cursor: pointer;
+           font-weight: 700;
+           transform: scale(1.1);
+           transition: all .1s ease-in-out;
         }
     }
 
