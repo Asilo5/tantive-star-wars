@@ -2,9 +2,9 @@ import React from 'react';
 import './ScrollText.scss';
 
 const ScrollText = ({ movies }) => {
-  let romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
-  let romanEpisodeID = romanNumerals[parseInt(movies.episode_id) - 1]
-  let movieSet = movies.map(movie => {
+    let movieSet = movies.map(movie => {
+        let romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+        let romanEpisodeID = romanNumerals[parseInt(movie.episode_id) - 1]
     return (
         <article className="scroll">
           <div className="scrollText"> 
