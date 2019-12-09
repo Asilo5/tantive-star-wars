@@ -34,12 +34,14 @@ class App extends Component {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
      .then(movies => this.setState({movies: movies, isLoading: false}))
+     .then(movies => console.log(this.state.movies))
      .catch(err => console.log(err))
-  }
+    }
 
   setCharacters = (charactersUrl) => {
     getCharacters(charactersUrl)
     .then(characterData => this.setState({characters: characterData}))
+    .then(characterData => console.log(CharacterData))
   }
 
   toggleFavourites = (id) => {
@@ -80,7 +82,7 @@ class App extends Component {
           <Route path='/scrollText' render={() =>
             <section className='scrollText'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-              <ScrollText movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+              <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
           </section>
               } />    
         </Switch>
