@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './MovieCard.scss';
 
-const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl, setCharacters }) => {
-    return (
+const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl, setCharacters, addMovieScroll }) => {
+    return ( 
     <article className="movieCard">
       <ul>    
         <li>{title}</li>
