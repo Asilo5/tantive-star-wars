@@ -64,8 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { isLoading, userName, userQuote, userRank, favourites, movies, movieScroll } = this.state;
-    console.log(movies)
+    const { isLoading, userName, userQuote, userRank, favourites, movieScroll } = this.state;
     return (
       <main className="App">
         <Switch>
@@ -90,7 +89,6 @@ class App extends Component {
               <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
             </section>
           } />    
-
         </Switch>
       </main>
     );
