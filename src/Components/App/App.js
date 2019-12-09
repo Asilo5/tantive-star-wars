@@ -19,7 +19,8 @@ class App extends Component {
       userQuote: '',
       userRank: '',
       isLoading: true,
-      favourites: []
+      favourites: [],
+      movieScroll: ''
     }
   }
 
@@ -58,8 +59,12 @@ class App extends Component {
     return this.setState({ favourites : deletedFav });
   }
   
+  addMovieScroll = (scroll) => {
+    this.setState({ movieScroll: scroll });
+  }
+
   render() {
-    const { isLoading, userName, userQuote, userRank, favourites, movies } = this.state;
+    const { isLoading, userName, userQuote, userRank, favourites, movies, movieScroll } = this.state;
     console.log(movies)
     return (
       <main className="App">
@@ -69,14 +74,14 @@ class App extends Component {
           (<Route exact path='/movies' render={() => 
             <section className='movie-section'>
              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
+             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters} addMovieScroll={this.addMovieScroll} />
             </section>
           } />)}
+          <Route path='/scroll' render={() => <ScrollText movieScroll={movieScroll} /> } />
           <Route path='/movies/:id' render={() => 
             <section className='movie-section'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
-              <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
             </section>
               } />
           <Route path='/favourites/' render={() =>
@@ -85,6 +90,7 @@ class App extends Component {
               <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
             </section>
           } />    
+
         </Switch>
       </main>
     );
