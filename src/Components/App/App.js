@@ -34,7 +34,6 @@ class App extends Component {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
      .then(movies => this.setState({movies: movies, isLoading: false}))
-     .then(movies => console.log(this.state.movies))
      .catch(err => console.log(err))
     }
 
@@ -75,19 +74,10 @@ class App extends Component {
           <Route path='/movies/:id' render={() => 
             <section className='movie-section'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
+              <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
             </section>
               } />
-          <Route exact path='/movies/:id' render={({match}) => {
-            const { id } = match.params;
-            const numId = parseInt(id)
-            return (
-            <section className='scrollText'>
-              <ScrollText episode={this.state.movies[numId - 1].episode_id} title={this.state.movies[numId - 1].title} text={this.state.movies[numId - 1].opening_crawl} characters={this.state.characters}  /> 
-            </section>
-            )
-            }
-              } />    
         </Switch>
       </main>
     );
