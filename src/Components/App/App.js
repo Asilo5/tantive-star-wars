@@ -41,7 +41,6 @@ class App extends Component {
   setCharacters = (charactersUrl) => {
     getCharacters(charactersUrl)
     .then(characterData => this.setState({characters: characterData}))
-    .then(characterData => console.log(CharacterData))
   }
 
   toggleFavourites = (id) => {
@@ -79,11 +78,15 @@ class App extends Component {
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
             </section>
               } />
-          <Route path='/scrollText' render={() =>
+          <Route exact path='/movies/:id' render={({match}) => {
+            const { id } = match.params;
+            const numId = parseInt(id)
+            return (
             <section className='scrollText'>
-              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-              <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
-          </section>
+              <ScrollText episode={this.state.movies[numId - 1].episode_id} title={this.state.movies[numId - 1].title} text={this.state.movies[numId - 1].opening_crawl} characters={this.state.characters}  /> 
+            </section>
+            )
+            }
               } />    
         </Switch>
       </main>
