@@ -3,12 +3,11 @@ $primary-color : #00D800;
 nav {
     background: transparent;
     border-right: 1px solid $primary-color;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 10px;
-    max-width: 15%;
+    max-width: 18%;
 
     img {
         height: 11em;
@@ -42,6 +41,10 @@ nav {
         &:hover {
            border-top: 1px solid $primary-color;
            border-bottom: 1px solid $primary-color;
+           cursor: pointer;
+           font-weight: 700;
+           transform: scale(1.1);
+           transition: all .1s ease-in-out;
         }
     }
 
@@ -49,4 +52,8 @@ nav {
         border-top: 1px solid $primary-color;
         border-bottom: 1px solid $primary-color;
     }
+}
+
+#blockColorblindContent {
+    display: none;
 }
