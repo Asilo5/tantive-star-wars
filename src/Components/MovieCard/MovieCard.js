@@ -14,7 +14,10 @@ const MovieCard = ({title, episode_id, release_date, id, characters, openingCraw
           className="movie_card_btn" 
           type="submit" 
           // id={episode_id}
-          onClick={() => setCharacters(characters)}>View Characters
+          onClick={() => {
+            setCharacters(characters)
+            addMovieScroll(openingCrawl)
+            }}>View Characters
         </button>
         </Link>
       </ul>
