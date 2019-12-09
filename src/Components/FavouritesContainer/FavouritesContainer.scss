@@ -1,0 +1,43 @@
+$primary-color: green;
+$hover-color: gold;
+
+.blank_error {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.favourite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: scroll;
+    height: 56em;
+    padding: 20px;
+}
+
+.fav_h2 {
+    color: white;
+    font-size: 3em;
+}
+
+.fav_h3 {
+    color: white;
+    font-size: 2em;
+}
+
+.back_to_movies__btn {
+    border-radius: 10px;
+    height: 55px;
+    font-size: 2em;
+    margin: 5px;
+    padding: 13px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    &:hover,
+      &:focus {
+         border: 2px solid $primary-color;
+         color: $primary-color;
+      }
+}

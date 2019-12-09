@@ -1,6 +1,11 @@
 export const getMovies = () => {
   return fetch('https://swapi.co/api/films/')
-    .then(res => res.json())
+  .then(response => {
+    if (!response.ok) {
+      throw Error('There was an error getting the data');
+    }
+    return response.json();
+  })
     .then(movies => {
       return movies.results.map((movie) => {
         const firstTenCharacters = movie.characters.slice(0, 10)
@@ -34,11 +39,13 @@ export const getCharacters = (allCharacters) => {
 
              return Promise.all([fetchedHomeworld, fetchedSpecies, fetchedFilms])
              .then(data => ({
+                id: Date.now(),
                 name: char.name,
                 homeworld: data[0].name,
                 population: data[0].population,
                 species: data[1],
-                films: data[2]
+                films: data[2],
+                isFavorite: false
              }));
            })
        });

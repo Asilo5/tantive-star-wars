@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesContainer should match snapshot with all information passing in correctly 1`] = `
+<section
+  className="movie-section"
+>
+  <NavBar />
+  <section
+    className="movie-container"
+  >
+    <MovieCard
+      episode_id={1}
+      id={1}
+      key="1"
+      release_date={2005}
+      title="The Phantom Menace"
+    />
+    <MovieCard
+      episode_id={3}
+      id={3}
+      key="3"
+      release_date={1977}
+      title="Revenge of the Sith"
+    />
+  </section>
+</section>
+`;

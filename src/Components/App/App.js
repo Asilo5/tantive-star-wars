@@ -5,6 +5,8 @@ import './App.scss';
 import { getMovies, getCharacters } from '../../apiCalls';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
+import NavBar from '../NavBar/NavBar';
+import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
 
 class App extends Component {
   constructor() {
@@ -15,22 +17,23 @@ class App extends Component {
       userName: '',
       userQuote: '',
       userRank: '',
-      isLoading: true
+      isLoading: true,
+      favourites: []
     }
   }
 
-  userInfo = ({name, rank, quote}) => {
+  userInfo = ({name, quote, rank}) => {
      this.setState({
       userName: name,
-      userQuote: rank,
-      userRank: quote
+      userQuote: quote,
+      userRank: rank
      })
   }
 
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-     .then(movies => this.setState({movies: movies, isLoading: false}))
+     .then(movies => this.setState({ movies, isLoading: false}))
      .catch(err => console.log(err))
   }
 
@@ -38,17 +41,48 @@ class App extends Component {
     getCharacters(charactersUrl)
     .then(characterData => this.setState({characters: characterData}))
   }
-  
 
+  toggleFavourites = (id) => {
+    const { favourites } = this.state;
+    favourites.includes(id) ? this.deleteFavourites(id) : this.addFavourites(id);
+  }
+
+  addFavourites = (id) => {
+    const { favourites } = this.state;
+    return this.setState({ favourites : [...favourites, id] });
+  }
+
+  deleteFavourites = (id) => {
+    const { favourites } = this.state;
+    let deletedFav = favourites.filter((favourite) => favourite !== id);
+    return this.setState({ favourites : deletedFav });
+  }
+  
   render() {
-    const { isLoading, userName, userQuote, userRank } = this.state;
+    const { isLoading, userName, userQuote, userRank, favourites } = this.state;
     return (
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
-          {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
-          (<Route exact path='/movies' render={() => <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/> } />)}
-          <Route path='/characters' render={() => <CharactersContainer characters={this.state.characters} /> } />
+          {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 gif' /> : 
+          (<Route exact path='/movies' render={() => 
+            <section className='movie-section'>
+             <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
+            </section>
+          } />)}
+          <Route path='/movies/:id' render={() => 
+            <section className='movie-section'>
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} /> 
+            </section>
+              } />
+          <Route path='/favourites/' render={() =>
+            <section className='movie-section'>
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
+            </section>
+          } />    
         </Switch>
       </main>
     );
