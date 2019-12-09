@@ -6,6 +6,7 @@ import { getMovies, getCharacters } from '../../apiCalls';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import NavBar from '../NavBar/NavBar';
+import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
 import ScrollText from '../ScrollText/ScrollText';
 
 class App extends Component {
@@ -23,18 +24,18 @@ class App extends Component {
     }
   }
 
-  userInfo = ({name, rank, quote}) => {
+  userInfo = ({name, quote, rank}) => {
      this.setState({
       userName: name,
-      userQuote: rank,
-      userRank: quote
+      userQuote: quote,
+      userRank: rank
      })
   }
 
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-     .then(movies => this.setState({movies: movies, isLoading: false}))
+     .then(movies => this.setState({ movies, isLoading: false}))
      .catch(err => console.log(err))
     }
 
@@ -67,7 +68,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path='/' render={() => <Login userInfo={this.userInfo}/> } />
-          {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 giff' /> : 
+          {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 gif' /> : 
           (<Route exact path='/movies' render={() => 
             <section className='movie-section'>
              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
@@ -81,6 +82,12 @@ class App extends Component {
               <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
             </section>
               } />
+          <Route path='/favourites/' render={() =>
+            <section className='movie-section'>
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
+            </section>
+          } />    
         </Switch>
       </main>
     );
