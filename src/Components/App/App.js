@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       movies: [],
       characters: [],
+      // selectedMovie: {},
       userName: '',
       userQuote: '',
       userRank: '',
@@ -38,8 +39,10 @@ class App extends Component {
     }
 
   setCharacters = (charactersUrl) => {
-    getCharacters(charactersUrl)
-    .then(characterData => this.setState({characters: characterData}))
+    // let id = parseInt(e.target.id)
+    // let selectedMovie = this.state.movies[id-1];
+    // this.setState({selectedMovie: selectedMovie})
+    getCharacters(charactersUrl).then(characterData => this.setState({characters: characterData}))
   }
 
   toggleFavourites = (id) => {
