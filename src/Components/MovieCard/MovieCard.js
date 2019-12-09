@@ -13,7 +13,6 @@ const MovieCard = ({title, episode_id, release_date, id, characters, openingCraw
         <button 
           className="movie_card_btn" 
           type="submit" 
-          // id={episode_id}
           onClick={() => {
             setCharacters(characters)
             addMovieScroll(openingCrawl)
