@@ -1,0 +1,43 @@
+.scroll {
+    width: 60%;
+    height: 30%;
+    overflow: hidden;
+    margin-left: 20%;
+}
+  
+.episode_title {
+    color: #EEDB00
+}
+  
+.scrollText {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    perspective: 100px;
+    color: #EEDB00;
+    font-family: 'Pathway Gothic One',
+    sans-serif;
+    font-size: 3vw;
+    font-weight: 600;
+    letter-spacing: 8px;
+    line-height: 150%;
+    text-align: center;
+}
+
+.text {
+    position: relative;
+    transform-origin: 50% 100%;
+    animation: text 300s linear;
+}
+
+@keyframes text {
+  0% {
+    top: 200px;
+    transform: rotateX(20deg) translateZ(120px);
+  }
+
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
