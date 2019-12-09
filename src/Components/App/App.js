@@ -21,18 +21,18 @@ class App extends Component {
     }
   }
 
-  userInfo = ({name, rank, quote}) => {
+  userInfo = ({name, quote, rank}) => {
      this.setState({
       userName: name,
-      userQuote: rank,
-      userRank: quote
+      userQuote: quote,
+      userRank: rank
      })
   }
 
   componentDidMount() {
     getMovies()
      .then(movies => movies.sort((a, b) => a.episode_id - b.episode_id))
-     .then(movies => this.setState({movies: movies, isLoading: false}))
+     .then(movies => this.setState({ movies, isLoading: false}))
      .catch(err => console.log(err))
   }
 
