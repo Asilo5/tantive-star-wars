@@ -3,10 +3,9 @@ $primary-color : #00D800;
 nav {
     background: transparent;
     border-right: 1px solid $primary-color;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 10px;
     max-width: 18%;
 
@@ -49,4 +48,8 @@ nav {
         border-top: 1px solid $primary-color;
         border-bottom: 1px solid $primary-color;
     }
+}
+
+#blockColorblindContent {
+    display: none;
 }
