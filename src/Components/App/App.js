@@ -20,7 +20,7 @@ class App extends Component {
       userRank: '',
       isLoading: true,
       favourites: [],
-      movieScroll: ''
+      movieScroll: {}
     }
   }
 
