@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import './MovieCard.scss';
 
 const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl, setCharacters, addMovieScroll }) => {
-    return ( 
+    
+  const scrollInfo = {
+    title,
+    episode_id,
+    openingCrawl
+  }
+
+   return ( 
     <article className="movieCard">
       <ul>    
         <li>{title}</li>
@@ -15,7 +22,7 @@ const MovieCard = ({title, episode_id, release_date, id, characters, openingCraw
           type="submit" 
           onClick={() => {
             setCharacters(characters)
-            addMovieScroll(openingCrawl)
+            addMovieScroll(scrollInfo)
             }}>View Characters
         </button>
         </Link>
