@@ -64,12 +64,10 @@ class App extends Component {
 
   resetOnLogOut = () => {
     this.setState({
-      movies: [],
       characters: [],
       userName: '',
       userQuote: '',
       userRank: '',
-      isLoading: true,
       favourites: []
     })
   }
