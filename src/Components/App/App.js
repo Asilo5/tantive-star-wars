@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
 import { getMovies, getCharacters } from '../../apiCalls';
-import PropTypes from 'prop-types';
 
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
