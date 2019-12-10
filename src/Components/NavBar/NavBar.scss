@@ -2,12 +2,12 @@ $primary-color : #00D800;
 
 nav {
     background: transparent;
-    border-right: 1px solid $primary-color;
-    height: auto;
+    border-right: 1px solid #00D800;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    max-width: 18%;
+    min-width: 17%;
 
     img {
         height: 11em;
@@ -30,6 +30,8 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 30px;
+    position: relative;
+    top: 6em;
 
     .nav {
         color: $primary-color;
@@ -38,6 +40,8 @@ nav {
         text-decoration: none;
         cursor: pointer;
         padding: 5px;
+        background: transparent;
+        border: none;
         &:hover {
            border-top: 1px solid $primary-color;
            border-bottom: 1px solid $primary-color;
