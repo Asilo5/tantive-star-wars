@@ -16,7 +16,15 @@ exports[`App should match a snapshot of all the information being passed in corr
       render={[Function]}
     />
     <Route
+      path="/scroll"
+      render={[Function]}
+    />
+    <Route
       path="/movies/:id"
+      render={[Function]}
+    />
+    <Route
+      path="/favourites/"
       render={[Function]}
     />
   </Switch>
