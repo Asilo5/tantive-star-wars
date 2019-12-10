@@ -61,6 +61,18 @@ class App extends Component {
     let deletedFav = favourites.filter((favourite) => favourite !== id);
     return this.setState({ favourites : deletedFav });
   }
+
+  resetOnLogOut = () => {
+    this.setState({
+      movies: [],
+      characters: [],
+      userName: '',
+      userQuote: '',
+      userRank: '',
+      isLoading: true,
+      favourites: []
+    })
+  }
   
   render() {
     const { isLoading, userName, userQuote, userRank, favourites } = this.state;
@@ -71,20 +83,20 @@ class App extends Component {
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 gif' /> : 
           (<Route exact path='/movies' render={() => 
             <section className='movie-section'>
-             <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+             <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
              <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
             </section>
           } />)}
           <Route path='/movies/:id' render={() => 
             <section className='movie-section'>
-              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
               <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
             </section>
               } />
           <Route path='/favourites/' render={() =>
             <section className='movie-section'>
-              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
               <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
             </section>
           } />    
