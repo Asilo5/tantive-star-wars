@@ -8,7 +8,7 @@
             <div>
                 <img src='https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg' alt='Princess Leia' />
                 <h2>{userName}</h2>
-                <h3>{userQuote}</h3>
+                <h3>"{userQuote}"</h3>
                 <h3>{userRank}</h3>
             </div>
             <div className='nav-links'>
