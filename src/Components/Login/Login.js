@@ -79,4 +79,8 @@ class Login extends Component {
     }
 }
 
+Login.propTypes = {
+  userInfo: PropTypes.func
+}
+
 export default Login;
