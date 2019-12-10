@@ -2,19 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './MovieCard.scss';
 
-const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl, setCharacters }) => {
-    return (
+const MovieCard = ({title, episode_id, release_date, id, characters, openingCrawl, setCharacters, addMovieScroll }) => {
+    
+  const scrollInfo = {
+    title,
+    episode_id,
+    openingCrawl
+  }
+
+   return ( 
     <article className="movieCard">
       <ul>    
         <li>{title}</li>
         <li>Episode: {episode_id}</li>
         <li>Released in {release_date}</li>
-        <Link to='/movies/:id'>
+        <Link to='/scroll'>
         <button 
           className="movie_card_btn" 
           type="submit" 
-          // id={episode_id}
-          onClick={() => setCharacters(characters)}>View Characters
+          onClick={() => {
+            setCharacters(characters)
+            addMovieScroll(scrollInfo)
+            }}>View Characters
         </button>
         </Link>
       </ul>

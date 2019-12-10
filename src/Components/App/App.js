@@ -15,12 +15,12 @@ class App extends Component {
     this.state = {
       movies: [],
       characters: [],
-      // selectedMovie: {},
       userName: '',
       userQuote: '',
       userRank: '',
       isLoading: true,
-      favourites: []
+      favourites: [],
+      movieScroll: {}
     }
   }
 
@@ -40,9 +40,6 @@ class App extends Component {
     }
 
   setCharacters = (charactersUrl) => {
-    // let id = parseInt(e.target.id)
-    // let selectedMovie = this.state.movies[id-1];
-    // this.setState({selectedMovie: selectedMovie})
     getCharacters(charactersUrl).then(characterData => this.setState({characters: characterData}))
   }
 
@@ -72,8 +69,12 @@ class App extends Component {
     })
   }
   
+  addMovieScroll = (scroll) => {
+    this.setState({ movieScroll: scroll });
+  }
+
   render() {
-    const { isLoading, userName, userQuote, userRank, favourites } = this.state;
+    const { isLoading, userName, userQuote, userRank, favourites, movieScroll } = this.state;
     return (
       <main className="App">
         <Switch>
@@ -85,11 +86,11 @@ class App extends Component {
              <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
             </section>
           } />)}
+          <Route path='/scroll' render={() => <ScrollText movieScroll={movieScroll} /> } />
           <Route path='/movies/:id' render={() => 
             <section className='movie-section'>
               <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
-              <ScrollText movies={this.state.movies} characters={this.state.characters}  /> 
             </section>
               } />
           <Route path='/favourites/' render={() =>

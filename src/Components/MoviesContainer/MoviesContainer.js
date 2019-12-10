@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './MoviesContainer.scss';
 
-const MoviesContainer = ({movies, userName, userQuote, userRank, setCharacters }) => {
+const MoviesContainer = ({movies, setCharacters, addMovieScroll }) => {
     let allMovies = movies.map(movie => {
     return <MovieCard 
             title={movie.title}
@@ -13,6 +13,7 @@ const MoviesContainer = ({movies, userName, userQuote, userRank, setCharacters }
             openingCrawl={movie.opening_crawl}
             key={movie.episode_id}
             setCharacters={setCharacters}
+            addMovieScroll={addMovieScroll}
             />
         }); 
     return (
