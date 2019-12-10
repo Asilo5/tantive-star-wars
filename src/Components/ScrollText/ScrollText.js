@@ -34,7 +34,7 @@ const ScrollText = ({ movieScroll }) => {
             </div>
           </section>
       </section>
-       <button className="movie_card_btn" >Continue ..</button>
+       <button className="scroll-button" >Continue to see characters..</button>
       </section>
     )
 }

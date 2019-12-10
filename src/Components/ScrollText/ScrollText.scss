@@ -43,7 +43,20 @@
   position: relative;
   top: -100px;
   animation: crawl 80s linear;
-  // left: 1em;
+}
+
+.scroll-button {
+  border-radius: 3px;
+  font-size: 2em;
+  font-weight: 700;
+  width: 35%;
+  padding: 20px;
+  &:hover {
+      font-weight: 800;
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: all .1s ease-in-out;
+    }
 }
 
 @keyframes crawl {
