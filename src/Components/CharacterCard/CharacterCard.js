@@ -22,4 +22,15 @@ const CharacterCard = ({ id, name, homeworld, population, species, films, toggle
   ) 
 }
 
+CharacterCard.propTypes = {
+  id: PropTypes.number, 
+  name: PropTypes.string, 
+  homeworld: PropTypes.string, 
+  population: PropTypes.number, 
+  species: PropTypes.string, 
+  films: PropTypes.array, 
+  toggleFavourites: PropTypes.func, 
+  favourites: PropTypes.array
+}
+
 export default CharacterCard;
