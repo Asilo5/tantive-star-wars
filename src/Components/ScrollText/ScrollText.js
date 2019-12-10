@@ -8,8 +8,7 @@ const ScrollText = ({ movieScroll }) => {
   //       let romanEpisodeID = romanNumerals[parseInt(movie.episode_id) - 1]
      
   // });
-
-  console.log(movieScroll)
+   console.log(movieScroll)
     return (
       <section>
           <section className='scroll-text'>
@@ -17,10 +16,10 @@ const ScrollText = ({ movieScroll }) => {
             <section className='star-wars-text'>
               <div className='crawl'>
               <div className='title-text'>
-                <p>Episode  </p>
-                <h3>title</h3>
+                <p>Episode {movieScroll.episode_id}</p>
+                <h3>{movieScroll.title}</h3>
               </div>
-              {movieScroll}
+              {movieScroll.openingCrawl}
             </div>
           </section>
       </section>
