@@ -83,7 +83,7 @@ class App extends Component {
           (<Route exact path='/movies' render={() => 
             <section className='movie-section'>
              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
-             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
+             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters} addMovieScroll={this.addMovieScroll}/>
             </section>
           } />)}
           <Route path='/scroll' render={() => <ScrollText movieScroll={movieScroll} /> } />
