@@ -9,7 +9,7 @@ const MovieCard = ({title, episode_id, release_date, id, characters, openingCraw
         <li>{title}</li>
         <li>Episode: {episode_id}</li>
         <li>Released in {release_date}</li>
-        <Link to='/movies/:id'>
+        <Link to='/scroll'>
         <button 
           className="movie_card_btn" 
           type="submit" 
