@@ -1,5 +1,6 @@
 import React from 'react';
 import './ScrollText.scss';
+import { Link } from 'react-router-dom';
 
 const ScrollText = ({ movieScroll }) => {
   //   let movieSet = movies.map(movie => {
@@ -23,7 +24,9 @@ const ScrollText = ({ movieScroll }) => {
             </div>
           </section>
       </section>
-       <button className="scroll-button" >Continue to see characters..</button>
+       <Link to='/movies/:id'>
+         <button className="scroll-button" >Continue to see characters..</button>
+       </Link>
       </section>
     )
 }
