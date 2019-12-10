@@ -11,15 +11,15 @@ Tantive is a Star Wars fan site, where a user can view and favourite characters 
 
 Clone down the repo.
 
-``git clone https://github.com/Asilo5/tantive-star-wars.git``
+``$ git clone https://github.com/Asilo5/tantive-star-wars.git``
 
 Once you have cloned the repo, install dependencies:
 
-``npm install``
+``$ npm install``
 
 And to view on your local browser:
 
-``npm start``
+``$ npm start``
 
 ## Built With:
 - React
@@ -30,4 +30,8 @@ And to view on your local browser:
 - CSS
 - Star Wars API
 
-![Screenshot]()
+![Screenshot](https://github.com/Asilo5/tantive-star-wars/blob/master/Screenshot%202019-12-10%20at%2016.35.17.png)
+![Screenshot](https://github.com/Asilo5/tantive-star-wars/blob/master/Screenshot%202019-12-10%20at%2016.35.53.png)
+![Screenshot](https://github.com/Asilo5/tantive-star-wars/blob/master/Screenshot%202019-12-10%20at%2016.36.08.png)
+![Screenshot](https://github.com/Asilo5/tantive-star-wars/blob/master/Screenshot%202019-12-10%20at%2016.36.24.png)
+![Screenshot](https://github.com/Asilo5/tantive-star-wars/blob/master/Screenshot%202019-12-10%20at%2016.36.37.png)
