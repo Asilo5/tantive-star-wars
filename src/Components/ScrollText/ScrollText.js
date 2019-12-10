@@ -4,12 +4,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ScrollText = ({ movieScroll }) => {
-  //   let movieSet = movies.map(movie => {
-  //       let romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
-  //       let romanEpisodeID = romanNumerals[parseInt(movie.episode_id) - 1]
-     
-  // });
-   console.log(movieScroll)
     return (
       <section>
           <section className='scroll-text'>
@@ -29,6 +23,10 @@ const ScrollText = ({ movieScroll }) => {
        </Link>
       </section>
     )
+}
+
+ScrollText.propTypes = {
+  movieScroll: PropTypes.object
 }
 
 export default ScrollText;
