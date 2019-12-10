@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import './App.scss';
 import { getMovies, getCharacters } from '../../apiCalls';
+import PropTypes from 'prop-types';
+
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import NavBar from '../NavBar/NavBar';
@@ -84,7 +86,7 @@ class App extends Component {
             <section className='movie-section'>
              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
              <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters} addMovieScroll={this.addMovieScroll}/>
-            </section>
+            </section> 
           } />)}
           <Route path='/scroll' render={() => <ScrollText movieScroll={movieScroll} /> } />
           <Route path='/movies/:id' render={() => 

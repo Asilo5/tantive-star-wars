@@ -1,5 +1,6 @@
 import React from 'react';
 import './ScrollText.scss';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ScrollText = ({ movieScroll }) => {
@@ -21,7 +22,7 @@ const ScrollText = ({ movieScroll }) => {
               </div>
               {movieScroll.openingCrawl}
             </div>
-          </section>
+          </section> 
       </section>
        <Link to='/movies/:id'>
          <button className="scroll-button" >Continue to see characters..</button>

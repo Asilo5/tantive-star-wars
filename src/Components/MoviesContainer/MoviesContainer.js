@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
+import PropTypes from 'prop-types';
 import './MoviesContainer.scss';
 
 const MoviesContainer = ({movies, setCharacters, addMovieScroll }) => {
@@ -15,7 +16,7 @@ const MoviesContainer = ({movies, setCharacters, addMovieScroll }) => {
             setCharacters={setCharacters}
             addMovieScroll={addMovieScroll}
             />
-        }); 
+        });  
     return (
             <section className='movie-container'>
               {allMovies}

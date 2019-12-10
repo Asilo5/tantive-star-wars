@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.scss';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
@@ -43,7 +44,7 @@ class Login extends Component {
                        onChange={(e) => this.handleChange(e)}/>
                 <p>What Knowledge have you from Star Wars?</p>
                 <section>
-                    <button 
+                    <button  
                       className="knowledge_button" 
                       type='button' 
                       name='rank' 
