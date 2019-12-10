@@ -13,7 +13,7 @@ exports[`MovieCard should match snapshot with all information passing in correct
       Released in 
     </li>
     <Link
-      to="/characters"
+      to="/scroll"
     >
       <button
         className="movie_card_btn"

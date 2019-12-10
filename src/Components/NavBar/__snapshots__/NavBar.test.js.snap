@@ -11,7 +11,9 @@ exports[`NavBar should match snapshot with all information passing in correctly 
       Consuelo
     </h2>
     <h3>
+      "
       Luke, Ich bin dein Vater
+      "
     </h3>
     <h3>
       Novice
@@ -32,15 +34,20 @@ exports[`NavBar should match snapshot with all information passing in correctly 
       className="nav"
       to="/favourites"
     >
-      Favourites
+      Favourites 
     </NavLink>
     <NavLink
-      activeClassName="active-nav"
-      className="nav"
       exact={true}
       to="/"
     >
-      Log Out
+       
+      <button
+        className="nav"
+        onClick={[Function]}
+      >
+         Log Out 
+      </button>
+       
     </NavLink>
   </div>
 </nav>
