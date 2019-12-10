@@ -1,13 +1,13 @@
 # Tantive Star Wars
 
-...
+Tantive is a Star Wars fan site, where a user can view and favourite characters from each Star Wars movie that exists. This was a week long group project intended for us to get a deeper understanding of how React works, learn how to use React-Router, and become better at testing and fetching with React.
 
 ## Created by:
 
 - [Amanda Consuelo Sierra](https://github.com/Asilo5)
 - [Allison Wagner](https://github.com/allisonjw)
 
-## Setup
+## View Planet Crait locally in your computer
 
 Clone down the repo.
 
@@ -28,5 +28,6 @@ And to view on your local browser:
 - Enzyme
 - HTML
 - CSS
+- Star Wars API
 
 ![Screenshot]()
