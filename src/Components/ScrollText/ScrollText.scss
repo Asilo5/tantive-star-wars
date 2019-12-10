@@ -1,3 +1,5 @@
+$accent_color: #00D800;
+
 .scroll-text {
   overflow: hidden;
   background-repeat: no-repeat;
@@ -51,11 +53,13 @@
   font-weight: 700;
   width: 35%;
   padding: 20px;
+  color: $accent_color;
+  border: 2px solid $accent_color;
   &:hover {
       font-weight: 800;
       cursor: pointer;
       transform: scale(1.1);
-      transition: all .1s ease-in-out;
+      transition: all .3s ease-in-out;
     }
 }
 
