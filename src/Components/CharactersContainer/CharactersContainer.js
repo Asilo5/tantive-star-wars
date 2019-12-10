@@ -14,4 +14,10 @@ const CharactersContainer = ({ characters, toggleFavourites, favourites }) => {
    )
 }
 
+CharactersContainer.propTypes = {
+  characters: PropTypes.array, 
+  toggleFavourites: PropTypes.func, 
+  favourites: PropTypes.array
+}
+
 export default CharactersContainer;
