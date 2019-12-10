@@ -1,5 +1,6 @@
  import React from 'react';
  import './NavBar.scss';
+ import PropTypes from 'prop-types';
  import { NavLink } from 'react-router-dom';
 
  const NavBar = ({userName, userQuote, userRank, favCount, resetOnLogOut }) => {
@@ -16,8 +17,16 @@
                 <NavLink to='/favourites' className='nav' activeClassName='active-nav' >Favourites {favCount}</NavLink>
                 <NavLink exact to='/' > <button className='nav' onClick={() => resetOnLogOut()}> Log Out </button> </NavLink>
             </div>
-         </nav>
+         </nav> 
      )
  }
+
+NavBar.propTypes = {
+    userName: PropTypes.string, 
+    userQuote: PropTypes.string, 
+    userRank: PropTypes.string, 
+    favCount: PropTypes.number, 
+    resetOnLogOut: PropTypes.func
+}
 
 export default NavBar;

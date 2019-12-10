@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './FavouritesContainer.scss';
+import PropTypes from 'prop-types';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
-
+ 
 const FavouritesContainer = ({ toggleFavourites, favourites, characters }) => {
     if(favourites.length === 0) {
       return (
@@ -37,6 +38,12 @@ const characterList = characters.map((character) => {
        {characterList}
      </section>
     )
+}
+
+FavouritesContainer.propTypes = {
+  toggleFavourites: PropTypes.func, 
+  favourites: PropTypes.array, 
+  characters: PropTypes.array
 }
 
 export default FavouritesContainer;
