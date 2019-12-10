@@ -12,10 +12,13 @@ $hover-color: gold;
 .favourite {
     display: flex;
     flex-wrap: wrap;
+    height: 61em;
     justify-content: center;
+    left: 18%;
     overflow: scroll;
-    height: 56em;
     padding: 20px;
+    position: absolute;
+    min-width: 80%;
 }
 
 .fav_h2 {
