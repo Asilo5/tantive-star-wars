@@ -2,7 +2,7 @@
  import './NavBar.scss';
  import { NavLink } from 'react-router-dom';
 
- const NavBar = ({userName, userQuote, userRank, favCount}) => {
+ const NavBar = ({userName, userQuote, userRank, favCount, resetOnLogOut }) => {
      return (
          <nav>
             <div>
@@ -14,7 +14,7 @@
             <div className='nav-links'>
                 <NavLink to='/movies' className='nav' activeClassName='active-nav' >Movies</NavLink>
                 <NavLink to='/favourites' className='nav' activeClassName='active-nav' >Favourites {favCount}</NavLink>
-                <NavLink exact to='/' className='nav' activeClassName='active-nav' >Log Out</NavLink>
+                <NavLink exact to='/' > <button className='nav' onClick={() => resetOnLogOut()}> Log Out </button> </NavLink>
             </div>
          </nav>
      )

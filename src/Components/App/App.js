@@ -58,6 +58,16 @@ class App extends Component {
     let deletedFav = favourites.filter((favourite) => favourite !== id);
     return this.setState({ favourites : deletedFav });
   }
+
+  resetOnLogOut = () => {
+    this.setState({
+      characters: [],
+      userName: '',
+      userQuote: '',
+      userRank: '',
+      favourites: []
+    })
+  }
   
   addMovieScroll = (scroll) => {
     this.setState({ movieScroll: scroll });
@@ -72,20 +82,20 @@ class App extends Component {
           {isLoading ? <img className='bb8-loading' src='https://media.giphy.com/media/eEbiAqk9YUT5e/giphy.gif' alt='BB8 gif' /> : 
           (<Route exact path='/movies' render={() => 
             <section className='movie-section'>
-             <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
-             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters} addMovieScroll={this.addMovieScroll} />
+             <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
+             <MoviesContainer movies={this.state.movies} userName={userName} userQuote={userQuote} userRank={userRank} setCharacters={this.setCharacters}/>
             </section>
           } />)}
           <Route path='/scroll' render={() => <ScrollText movieScroll={movieScroll} /> } />
           <Route path='/movies/:id' render={() => 
             <section className='movie-section'>
-              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
               <CharactersContainer characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
             </section>
               } />
           <Route path='/favourites/' render={() =>
             <section className='movie-section'>
-              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} />
+              <NavBar userName={userName} userQuote={userQuote} userRank={userRank} favCount={favourites.length} resetOnLogOut={this.resetOnLogOut} />
               <FavouritesContainer movies={this.state.movies} characters={this.state.characters} toggleFavourites={this.toggleFavourites} favourites={favourites} />
             </section>
           } />    
