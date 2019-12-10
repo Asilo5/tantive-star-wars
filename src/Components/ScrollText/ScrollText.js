@@ -21,11 +21,18 @@ const ScrollText = ({ movieScroll }) => {
 
   console.log(movieScroll)
     return (
-        <section className='scroll'>
-          <div className='scrollText'>
-            <p className='episode_title'>{movieScroll}</p>
+      <section className='scroll-text'>
+        <div className="fade"></div>
+        <section className='star-wars-text'>
+          <div className='crawl'>
+          <div className='title-text'>
+             <p>Episode  </p>
+             <h3>title</h3>
           </div>
-        </section>
+          {movieScroll}
+        </div>
+    </section>
+  </section>
     )
 }
 
