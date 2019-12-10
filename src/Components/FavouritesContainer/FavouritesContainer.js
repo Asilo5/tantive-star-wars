@@ -40,4 +40,10 @@ const characterList = characters.map((character) => {
     )
 }
 
+FavouritesContainer.propTypes = {
+  toggleFavourites: PropTypes.func, 
+  favourites: PropTypes.array, 
+  characters: PropTypes.array
+}
+
 export default FavouritesContainer;
