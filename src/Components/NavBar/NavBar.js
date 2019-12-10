@@ -21,4 +21,12 @@
      )
  }
 
+NavBar.propTypes = {
+    userName: PropTypes.string, 
+    userQuote: PropTypes.string, 
+    userRank: PropTypes.string, 
+    favCount: PropTypes.number, 
+    resetOnLogOut: PropTypes.func
+}
+
 export default NavBar;
