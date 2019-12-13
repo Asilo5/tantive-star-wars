@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { shallow } from 'enzyme';
 import Login  from './Login';
@@ -132,12 +133,15 @@ describe('Login', () => {
       expect(mockUserInfo).toHaveBeenCalled();
     })
 
-    it.skip('should invoke sendUpdate on click', () => {
+    it('should invoke sendUpdate on click', () => {
+      wrapper.setState({
+        name: 'Bob',
+        quote: 'bobs mom',
+        rank: 'novice'   
+      })
       wrapper.instance().sendUpState = jest.fn();
-      let mockEvent = {
-        preventDefault: jest.fn()
-      };
-      wrapper.find('.submit-btn').simulate('click', mockEvent);
+      wrapper.instance().forceUpdate();
+      wrapper.find('.submit-btn').simulate('click');
       expect(wrapper.instance().sendUpState).toHaveBeenCalled();
     })
 })
