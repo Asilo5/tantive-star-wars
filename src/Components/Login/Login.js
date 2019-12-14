@@ -65,13 +65,13 @@ class Login extends Component {
                       name='rank' 
                       value='Expert' 
                       onClick={(e) => this.handleChange(e)}
-                      >Expert
+                      >Expert 
                     </button>
                 </section>
                 { name === '' || quote === '' || rank === '' ? 
                 ( <button className='submit-btn-error' disabled={true}> Inputs Must Fill </button>)
                 : 
-                 (<Link to='/movies'><button className='submit-btn' onClick={this.sendUpState}>Submit</button></Link> )
+                 (<Link to='/movies' ><button onClick={this.sendUpState} className='submit-btn'>Submit</button></Link> )
                 }
             </form>
           </div>
