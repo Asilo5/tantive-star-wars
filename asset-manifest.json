@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/tantive-star-wars/static/css/main.2ad6c1e1.chunk.css",
+    "main.js": "/tantive-star-wars/static/js/main.8b062e9a.chunk.js",
+    "main.js.map": "/tantive-star-wars/static/js/main.8b062e9a.chunk.js.map",
+    "runtime-main.js": "/tantive-star-wars/static/js/runtime-main.99400357.js",
+    "runtime-main.js.map": "/tantive-star-wars/static/js/runtime-main.99400357.js.map",
+    "static/js/2.e5728cca.chunk.js": "/tantive-star-wars/static/js/2.e5728cca.chunk.js",
+    "static/js/2.e5728cca.chunk.js.map": "/tantive-star-wars/static/js/2.e5728cca.chunk.js.map",
+    "index.html": "/tantive-star-wars/index.html",
+    "precache-manifest.82eb0eb3c65f6d0df37c5d97eedf0a36.js": "/tantive-star-wars/precache-manifest.82eb0eb3c65f6d0df37c5d97eedf0a36.js",
+    "service-worker.js": "/tantive-star-wars/service-worker.js",
+    "static/css/main.2ad6c1e1.chunk.css.map": "/tantive-star-wars/static/css/main.2ad6c1e1.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.99400357.js",
+    "static/js/2.e5728cca.chunk.js",
+    "static/css/main.2ad6c1e1.chunk.css",
+    "static/js/main.8b062e9a.chunk.js"
+  ]
+}
